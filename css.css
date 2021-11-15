@@ -19,12 +19,14 @@ body {
       margin-right: 5px;
     }
   footer {
-    display: block;
+    /* display: block; */
+    flex-wrap: wrap;
     height: auto;
     left: 0;
     bottom: 0;
     right: 0;
-    position:fixed;
+    /* max-width: 100%; */
+    position:relative;
     text-align: center;
     background-color: black;
     color: #fffff8;
@@ -40,9 +42,9 @@ body {
     grid-area: nav;
   }
     #id {
-      position: relative;
+      position:absolute ;
       right: 0;
-      margin-left: 1300px;
+      margin-left: 80%;
     }
     nav a{
       display: block;
@@ -161,9 +163,9 @@ body {
     .layout {
       display: grid;
       width: 100%;
-      height:max-content;
+      height: 100vh;
       grid-template-rows: 1fr 0.3fr 10fr 0.3fr ;
-      grid-template-columns:repeat(8,1fr);
+      grid-template-columns:repeat(auto-fit,1fr);
       grid-template-areas: 
       "hd hd hd hd hd hd hd hd "
       "nav nav nav nav nav nav nav nav "
