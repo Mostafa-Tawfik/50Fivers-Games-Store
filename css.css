@@ -1,10 +1,20 @@
+html {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+*{
+  box-sizing: border-box;
+}
 body {
     margin: 0;
     background-color: rgb(18,18,18);
     font-family: Khula,sans-serif;
-    box-sizing: border-box;
+    min-height: 100vh;
     }
   header {
+    width: 100%;
     display: flex;
     justify-content: center;
     background-color: black;
@@ -15,49 +25,48 @@ body {
     grid-area: hd;
   }
     header img {
-      /* margin-left: 60px; */
       margin-top: 25px;
       margin-right: 5px;
     }
   footer {
-    height: auto;
-    /* left: 0;
+    height:fit-content;
+    left: 0;
     bottom: 0;
-    right: 0; */
-    position:relative;
+    right: 0;
+    position:fixed;
     text-align: center;
     background-color: black;
     color: #fffff8;
     grid-area: ft;
   }
   nav {
-    display: flex;
-    padding-left: 30px;
+    width: 100%;
+    white-space: nowrap;
+    float: left;
+    padding: 1%;
+    padding-left: 2%;
     color:#fffff8;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(23, 23, 23);
     font: bold 20px sans-saief;
     position: relative;
     grid-area: nav;
   }
-    #id {
-      position:absolute ;
-      right: 0;
-      margin-left: 80%;
+    .account {
+      float: right;
     }
     nav a{
-      display: block;
-      margin: 10px;
+      margin: 5px;
       position: relative;
     }
     nav a:hover {
       opacity: 0.5;
-    }
+        }
   aside {
     color: #fffff8;
     display: block;
     position: relative;
-    padding-left: 40px;
-    padding-top: 40px;
+    padding-left: 10%;
+    padding-top: 30px;
     padding-right: 0;
     margin-right: 0;
     white-space: nowrap;
@@ -75,8 +84,8 @@ body {
       aside p {
         font-weight: bolder;
       }
-  .container {
-    /* height: 100%; */
+  .main {
+    height: 100%;
     padding: 10px;
     margin: 10px;
     display: flex;
@@ -84,7 +93,7 @@ body {
     text-align: center;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     grid-area: main;
   }
   .Games {
@@ -100,7 +109,7 @@ body {
     }
       .Games img {
         border-radius: 20px;
-        margin-top: 20px;
+        margin-top: 15px;
         opacity: 1;
         margin-left: auto;
         margin-right: auto;
@@ -118,7 +127,7 @@ body {
         opacity: 0;
         display: inline-block;
         position:relative;
-        bottom: 45%;
+        bottom: 70%;
       }
       .Games:hover img {
         opacity: 0.3;
@@ -127,7 +136,7 @@ body {
         opacity: 1;
       }
       .text {
-        background-color: #000279;
+        background-color: black;
         color: white;
         font-size: 16px;
         padding: 16px 32px;
@@ -136,12 +145,11 @@ body {
       display: block;
       width: 70%;
       height: 80px;
-      position:absolute;
-      bottom: 22px;
-      left: 5px;
+      position:relative;
+      bottom: 12px;
       text-align: left;
-      margin-left: 40px;
-      font-size: 20px;
+      margin-left: 5%;
+      font-size: 18px;
     }
         .infos span {
           text-decoration: line-through;
@@ -150,19 +158,21 @@ body {
           font-weight: lighter;
         }
         .Games .tag {
-          font-size: 15px;
+          font-size: 13px;
           opacity: 60%;
-          margin-top: -20px;
+          margin-top: -18px;
           font-weight: normal;
         }
         .Games .price{
           margin-top: -10px;
+          font-size: 18px;
         }
-    .layout {
+.layout {
       display: grid;
       width: 100%;
-      /* height:max-content; */
-      grid-template-rows:fit-content ;
+      height: 80%;
+      max-height: fit-content;
+      grid-template-rows:repeat(auto-fit, 1fr) ;
       grid-template-columns:repeat(auto-fit,1fr);
       grid-template-areas: 
       "hd hd hd hd hd hd hd hd "
