@@ -190,6 +190,6 @@ body {
       font-size: 1rem;
       font-weight: bold;
     }
-    audio {
+    #sounds {
       display: none;
     }
