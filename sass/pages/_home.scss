@@ -1,0 +1,14 @@
+* {
+    // background-color: $dark-clr;
+    color: $light-clr;
+}
+
+@import './home/header';
+
+@import './home/navbar';
+
+@import './home/aside';
+
+@import './home/article';
+
+@import './home/footer';

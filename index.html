@@ -5,102 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>50Fivers Games Store</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="./sass/main.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
     <section class="layout">
+        <div class="overlay"></div>
         <header>
-            <img src="img/50.png" alt="logo" width="100px" height="71px">
-            <h1>Games Store</h1>
+            <img src="img/50.png" alt="logo">
+            <h1>games Store</h1>
         </header>
         <nav>
-            <a href="#">STORE</a>
-            <a href="#">NEWS</a>
-            <a href="#">FAQ</a>
-            <a href="#">SUPPORT</a>
-            <a href="#">CONTACT US</a>
-            <span class="account"><a href="#">MY ACCOUNT</a></span>
+            <h2><a href="#">STORE</a></h2>
+            <h2><a href="#">NEWS</a></h2>
+            <h2><a href="#">FAQ</a></h2>
+            <h2><a href="#">SUPPORT</a></h2>
+            <h2><a href="#">CONTACT US</a></h2>
+            <h2><a href="#">MY ACCOUNT</a></h2>
         </nav>
-        <aside>
-            <div class="top">
-                <p>BROWSE CATEGORIES
-                <div class="item"><a href="#">Best Selling</a></div>
-                <div class="item"><a href="#">Upcoming</a></div>
-                <div class="item"><a href="#">New Releases</a></div>
-                <div class="item"><a href="#">On Sale</a></div>
-            </div>
-            <div class="mid">
-                <p>Genre
-                <div class="item"><a href="#">Action</a></div>
-                <div class="item"><a href="#">RPG</a></div>
-                <div class="item"><a href="#">Strategy</a></div>
-                <div class="item"><a href="#">Simulation</a></div>
-                <div class="item"><a href="#">Racing</a></div>
-                <div class="item"><a href="#">Sports</a></div>
-                <div class="item"><a href="#">Shooter</a></div>
-            </div>
-        </aside>
-        <section class="main">
-            <div class="Games">
-                <img src="img/BF.jpg" alt="Battlefield" width="273" height="365">
-                <div class="infos">
-                    <p>Battlefield 2042</p>
-                    <p class="tag">Shooter FPS </p>
-                    <p class="price">$60</p>
+        <div class="main">
+            <aside>
+                <div class="top">
+                    <h3>BROWSE CATEGORIES</h3>
+                    <div class="item"><a href="#">Best Selling</a></div>
+                    <div class="item"><a href="#">Upcoming</a></div>
+                    <div class="item"><a href="#">New Releases</a></div>
+                    <div class="item"><a href="#">On Sale</a></div>
                 </div>
-                <div class="middle">
-                    <div class="text"><a href="#">Battlefield</a></div>
+                <div class="mid">
+                    <h3>Genre</h3>
+                    <div class="item"><a href="#">Action</a></div>
+                    <div class="item"><a href="#">RPG</a></div>
+                    <div class="item"><a href="#">Strategy</a></div>
+                    <div class="item"><a href="#">Simulation</a></div>
+                    <div class="item"><a href="#">Racing</a></div>
+                    <div class="item"><a href="#">Sports</a></div>
+                    <div class="item"><a href="#">Shooter</a></div>
                 </div>
-            </div>
-            <div class="Games">
-                <img src="img/GTA.jpeg" alt="GTA" width="273" height="365">
-                <div class="infos">
-                    <p>GTA V</p>
-                    <p class="tag">Action Open-World</p>
-                    <p class="price"><span>$60</span> $15</p>
+            </aside>
+            <article>
+                <div class="games">
+                    <img src="img/BF.jpg" alt="Battlefield">
+                    <div class="infos">
+                        <p>Battlefield 2042</p>
+                        <p class="tag">Shooter FPS </p>
+                        <p class="price">$60</p>
+                    </div>
+                    <div class="middle">
+                        <div class="text"><a href="#">Battlefield</a></div>
+                    </div>
                 </div>
-                <div class="middle">
-                    <div class="text"><a href="#">GTA V</a></div>
+                <div class="games">
+                    <img src="img/GTA.jpeg" alt="GTA">
+                    <div class="infos">
+                        <p>GTA V</p>
+                        <p class="tag">Action Open-World</p>
+                        <p class="price"><span class="pricebefore">$60</span> $15</p>
+                    </div>
+                    <div class="middle">
+                        <div class="text"><a href="#">GTA V</a></div>
+                    </div>
                 </div>
-            </div>
-            <div class="Games">
-                <img src="img/fifa-22.jpg" alt="FIFA" width="273" height="365">
-                <div class="infos">
-                    <p>FIFA 22</p>
-                    <p class="tag">Sports Football</p>
-                    <p class="price">$60</p>
+                <div class="games">
+                    <img src="img/fifa-22.jpg" alt="FIFA">
+                    <div class="infos">
+                        <p>FIFA 22</p>
+                        <p class="tag">Sports Football</p>
+                        <p class="price">$60</p>
+                    </div>
+                    <div class="middle">
+                        <div class="text"><a href="#">FIFA 22</a></div>
+                    </div>
                 </div>
-                <div class="middle">
-                    <div class="text"><a href="#">FIFA 22</a></div>
+                <div class="games">
+                    <img src="img/aoe.png" alt="Age of Empires IV">
+                    <div class="infos">
+                        <p>Age of Empires IV</p>
+                        <p class="tag">Strategy RTS</p>
+                        <p class="price">$60</p>
+                    </div>
+                    <div class="middle">
+                        <div class="text"><a href="#">Age of Empires IV</a></div>
+                    </div>
                 </div>
-            </div>
-            <div class="Games">
-                <img src="img/aoe.png" alt="Age of Empires IV" width="275" height="350">
-                <div class="infos">
-                    <p>Age of Empires IV</p>
-                    <p class="tag">Strategy RTS</p>
-                    <p class="price">$60</p>
+                <div class="games">
+                    <img src="img/fc6.jpg" alt="Far Cry 6">
+                    <div class="infos">
+                        <p>Far Cry 6</p>
+                        <p class="tag">Action Open-World</p>
+                        <p class="price">$60</p>
+                    </div>
+                    <div class="middle">
+                        <div class="text"><a href="#">Far Cry 6</a></div>
+                    </div>
                 </div>
-                <div class="middle">
-                    <div class="text"><a href="#">Age of Empires <BR> IV</a></div>
-                </div>
-            </div>
-            <div class="Games">
-                <img src="img/fc6.jpg" alt="Far Cry 6" width="273" height="365">
-                <div class="infos">
-                    <p>Far Cry 6</p>
-                    <p class="tag">Action Open-World</p>
-                    <p class="price">$60</p>
-                </div>
-                <div class="middle">
-                    <div class="text"><a href="#">Far Cry 6</a></div>
-                </div>
-            </div>
-        </section>
+            </article>
+        </div>
         <footer class="section">
-            <p>&copy 2021. All Right Reserved. Mostafa Tawfik.<br>
-                All trademarks are property of their respective owners in the US and other countries.
+            <p>All trademarks are property of their respective owners in the US and other countries.
         </footer>
     </section>
     <script src="/app.js"></script>
