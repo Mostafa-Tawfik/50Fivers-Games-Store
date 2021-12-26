@@ -22,7 +22,7 @@ section {
   min-width: min-content;
   background: -webkit-gradient(linear, left top, right top, color-stop(60%, #111111), color-stop(80%, #e07218), to(#111111));
   background: linear-gradient(90deg, #111111 60%, #e07218 80%, #111111 100%);
-  background: url("/img/sigmund-By-unsplash2.webp");
+  background: url("/img/sigmund-unsplash.webp");
   background-size: cover;
 }
 
