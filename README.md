@@ -1,2 +1,20 @@
-# 50Fivers-Games-Store
-This is my main project that is getting bigger with time as I apply to it the new techniques that I learned as I moved forward.
+# My Games
+### A Games Library App
+
+<br>
+
+# Project Summary
+
+Create a games laibaray app that allows you to select and categorize your favorite games. The project is using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
+
+<br>
+
+# Project Preview
+![Alt Text](./games-store-2.0.0.jpg?raw=true 'Project Preview')
+
+# TL;DR
+
+To get started developing right away:
+
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
