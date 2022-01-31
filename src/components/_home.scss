@@ -1,0 +1,14 @@
+* {
+    // background-color: $dark-clr;
+    color: $light-clr;
+}
+
+@import './header';
+
+@import './navbar';
+
+@import './aside';
+
+@import './main';
+
+@import './footer';

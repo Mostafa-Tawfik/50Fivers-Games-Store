@@ -1,0 +1,39 @@
+// import fonts
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+// global rules
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: min-content;
+  background: linear-gradient(90deg,
+                rgb(17, 17, 17) 60%,
+                rgb(224, 114, 24) 80%,
+                rgb(17, 17, 17) 100%
+    );
+  background: url('sigmund-unsplash.webp');
+  background-size: cover;
+}
+
+// fonts
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1em;
+}

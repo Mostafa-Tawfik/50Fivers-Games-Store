@@ -1,0 +1,60 @@
+@media (max-width: 798px) {
+    h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 0.7rem;
+      }
+      
+      h3 {
+        font-size: 0.6rem;
+      }
+      aside {
+          display: none;
+      }
+    article {
+        justify-content: center;
+    .games {
+        padding: 1em;
+        height: 300px;
+        width: 170px;
+        img {
+            width: 35vw;
+            height: 200px;
+            border-radius: 15%;
+            transition: 1s ease;
+        }
+        }
+        .middle {
+            bottom: 30%;
+        }
+        .text {
+            padding: 0.4em ;
+            border-radius: 30%;
+            a {
+                background: $dark-clr;
+                padding: 0.1em;
+                border-radius: 30%;
+            } 
+        }
+    }
+    header {
+        width: 100vw;
+        gap: 5px;
+        text-transform: uppercase;
+        z-index: 10;
+        img {
+            height:auto;
+            width: 40px;
+            display: none;
+        }
+    }
+    nav {
+        width: 100vw;
+        gap: 0.4em;
+        padding: 0.8em;
+        z-index: 10;
+    }
+}
+
