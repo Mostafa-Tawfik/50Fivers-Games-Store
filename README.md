@@ -5,12 +5,12 @@
 
 # Project Summary
 
-Create a games laibaray app that allows you to select and categorize your favorite games. The project is using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
+Create a games Library app that allows you to select and categorize your favorite games. The project is using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
 
 <br>
 
 # Project Preview
-![Alt Text](./games-store-2.0.0.jpg?raw=true 'Project Preview')
+![Alt Text](./myGames.png?raw=true 'Project Preview')
 
 # TL;DR
 
