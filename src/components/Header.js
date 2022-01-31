@@ -8,12 +8,12 @@ export default function Header() {
           <h1>games Store</h1>
       </header>
         <nav>
-            <h2><a href="#">STORE</a></h2>
-            <h2><a href="#">NEWS</a></h2>
-            <h2><a href="#">FAQ</a></h2>
-            <h2><a href="#">SUPPORT</a></h2>
-            <h2><a href="#">CONTACT US</a></h2>
-            <h2><a href="#">MY ACCOUNT</a></h2>
+            <h2><a href="#0">STORE</a></h2>
+            <h2><a href="#0">NEWS</a></h2>
+            <h2><a href="#0">FAQ</a></h2>
+            <h2><a href="#0">SUPPORT</a></h2>
+            <h2><a href="#0">CONTACT US</a></h2>
+            <h2><a href="#0">MY ACCOUNT</a></h2>
         </nav>
   </div>;
 }

@@ -11,7 +11,7 @@ export default function Main() {
               <p className="price">$60</p>
           </div>
           <div className="middle">
-              <div className="text"><a href="#">Battlefield</a></div>
+              <div className="text"><a href="#0">Battlefield</a></div>
           </div>
       </div>
       <div className="games">
@@ -22,7 +22,7 @@ export default function Main() {
               <p className="price"><span className="pricebefore">$60</span> $15</p>
           </div>
           <div className="middle">
-              <div className="text"><a href="#">GTA V</a></div>
+              <div className="text"><a href="#0">GTA V</a></div>
           </div>
       </div>
       <div className="games">
@@ -33,7 +33,7 @@ export default function Main() {
               <p className="price">$60</p>
           </div>
           <div className="middle">
-              <div className="text"><a href="#">FIFA 22</a></div>
+              <div className="text"><a href="#0">FIFA 22</a></div>
           </div>
       </div>
       <div className="games">
@@ -44,7 +44,7 @@ export default function Main() {
               <p className="price">$60</p>
           </div>
           <div className="middle">
-              <div className="text"><a href="#">Age of Empires IV</a></div>
+              <div className="text"><a href="#0">Age of Empires IV</a></div>
           </div>
       </div>
       <div className="games">
@@ -55,7 +55,7 @@ export default function Main() {
               <p className="price">$60</p>
           </div>
           <div className="middle">
-              <div className="text"><a href="#">Far Cry 6</a></div>
+              <div className="text"><a href="#0">Far Cry 6</a></div>
           </div>
       </div>
     </article>
