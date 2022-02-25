@@ -1,13 +1,29 @@
-// import fonts
+@import './variables.scss';
+
+/* import fonts */
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
-// global rules
+/* global rules */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: $clr-light;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
+}
+
+a {
+  color: inherit;
 }
 
 section {
@@ -21,11 +37,11 @@ section {
                 rgb(224, 114, 24) 80%,
                 rgb(17, 17, 17) 100%
     );
-  background: url('sigmund-unsplash.webp');
+  background: url('../public/images/sigmund-unsplash.webp');
   background-size: cover;
 }
 
-// fonts
+/* fonts */
 h1 {
   font-size: 4.5rem;
 }
