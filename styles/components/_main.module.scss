@@ -11,21 +11,26 @@
         padding: 1em;
         background-color: black;
         border-radius: 10%;
-        height: 350px;
+        height: 500px;
+        position: relative;
         img {
-            width: 173px;
-            height: 265px;
+            position: relative;
+            // top: 0;
+            // left: 0;
+            width: 250px;
+            height: 300px;
             border-radius: 15%;
             transition: 1s ease;
+            object-fit:cover;
         }
         .infos  {
             margin: 1em 0;
         }
         .middle {
-            position: relative;
+            position: absolute;
             margin-left: auto;
             margin-right: auto;
-            bottom: 70%;
+            top: 0;
             opacity: 0;
             border-radius: 30%;
             transition: 1s ease;
@@ -33,11 +38,13 @@
         .text {
             display: flex;
             padding: 0.6em;
-            border-radius: 30%;
+            position: absolute;
+            top: 100px;
+            left: 50px;
             a {
                 background: $clr-dark;
-                padding: 0.8em;
-                border-radius: 30%;
+                padding: 0.5em;
+                border-radius: 10px;
             } 
         } 
     }

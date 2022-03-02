@@ -6,6 +6,7 @@ import Main from '../components/Main';
 import Footer from '../components/Footer';
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -25,3 +26,25 @@ export default function Home() {
     </div>
   )
 }
+
+// export async function getServerSideProps() {
+
+//   const id = 203450
+  
+//   const res = await fetch("https://api.igdb.com/v4/covers", {
+//     method: 'POST',
+//     headers: {
+//       'Accept': 'application/json',
+//       'Client-ID': '3gme7daiuncpui724oa7bo0abveygb',
+//       'Authorization': 'Bearer 4xtwp8lwnvc6ez5k7y15yi0706l0br',
+//     },
+//     body: `where id = ${id}; fields alpha_channel,animated,checksum,game,height,image_id,url,width;`,
+//   })
+//   const data = await res.json()
+      
+//   console.log(data)
+
+//   return {
+//       props: {data},
+//   }
+// }
