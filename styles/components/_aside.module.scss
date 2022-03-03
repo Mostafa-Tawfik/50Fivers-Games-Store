@@ -1,12 +1,18 @@
-aside {
+.aside {
     display: flex;
     flex-direction: column;
     gap: 1em;
     padding: 2em;
-    width: max-content;
+    width: min(20vw, 300px);
     & a {
         display: flex;
         flex-direction: column;
         line-height: 2em;
     }
 }
+
+@media (max-width: 440px) {
+    .aside {
+      display: none;
+    }
+  }

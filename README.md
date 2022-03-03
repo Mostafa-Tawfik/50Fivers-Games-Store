@@ -17,4 +17,4 @@ Create a games Library app that allows you to select and categorize your favorit
 To get started developing right away:
 
 * install all project dependencies with `npm install`
-* start the development server with `npm start`
+* start the development server with `npm run dev`
