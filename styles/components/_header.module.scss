@@ -51,6 +51,11 @@
 // 
 @media (max-width: 440px) {
     .header-showcase {
+        background: linear-gradient(90deg,
+        rgb(0, 0, 0) 66%,
+        rgb(20, 0, 0) 80%,
+        rgb(0, 0, 0) 100%,
+        );
         position: fixed;
         z-index: 100;
         white-space: nowrap;
