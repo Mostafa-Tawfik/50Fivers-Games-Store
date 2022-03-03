@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/components/_header.module.scss'
+import Link from 'next/link'
 
 export default function Header() {
   return <div className={styles['header-showcase']}>
@@ -11,7 +12,7 @@ export default function Header() {
       </header>
 
       <nav className={styles['nav']}>
-          <h2><a href="#0">STORE</a></h2>
+          <h2><Link href="/">HOME</Link></h2>
           <h2><a href="#0">NEWS</a></h2>
           <h2><a href="#0">FAQ</a></h2>
           <h2><a href="#0">SUPPORT</a></h2>

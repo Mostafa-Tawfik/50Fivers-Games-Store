@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.game-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  z-index: 20;
+  // background: rgba(0, 0, 0, 0.9);
+  h1 {
+    font-size: 3rem;
+  }
+  .game-img {
+    width: min(60vw, 700px);
+    border-radius: 30px;
+  }
+  .game-desc {
+    width: min(60vw, 700px);
+  }
+}

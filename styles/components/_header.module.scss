@@ -5,12 +5,7 @@
     padding: 1em 4em 0 2em;
     gap: 20px;
     text-transform: uppercase;
-    z-index: 10;
-    background: linear-gradient(90deg,
-    rgb(0, 0, 0) 66%,
-    rgb(155, 8, 8) 80%,
-    rgb(0, 0, 0) 100%
-    );
+    z-index: 20;
 
     img {
         height: 71px;
@@ -39,15 +34,13 @@
     display: flex;
     gap: 1em;
     padding: 0 2em 1em ;
-    z-index: 10;
+    z-index: 20;
+    h2 {
+        z-index: 20;
+    }
     :nth-last-child(1) {
         margin-left: auto;
     }
-    background: linear-gradient(90deg,
-    rgb(0, 0, 0) 66%,
-    rgb(155, 8, 8) 80%,
-    rgb(0, 0, 0) 100%
-    );
 
     h2:hover{
         transform: scale(1.05);

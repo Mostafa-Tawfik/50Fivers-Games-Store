@@ -3,7 +3,38 @@
     bottom: 100px;
     margin-top: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding: 2em;
+    z-index: 20;
+    
+    .footer-sign {
+      display: flex;
+      gap: 0.5em;
+      p {
+        font-family: 'Redressed', cursive;
+        font-size: 1.5rem;
+        span {
+            font-family: 'Mrs Saint Delafield', cursive;
+        }
+      }
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
 }
+
+@media (max-width: 440px) {
+    .footer {
+      position: relative;
+      span , p {
+        font-size: 1rem;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
