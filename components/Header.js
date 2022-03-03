@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../styles/components/_header.module.scss'
 
 export default function Header() {
-  return <div>
+  return <div className={styles['header-showcase']}>
       <div className={styles["overlay"]}></div>
       
       <header className={styles['header']}>

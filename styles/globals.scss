@@ -53,3 +53,26 @@ h2 {
 h3 {
   font-size: 1.1em;
 }
+
+// 
+@media (max-width: 1024px) {
+    p {
+      font-size: 0.9rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 440px) {
+  p {
+    font-size: 0.7rem;
+  }
+  h1 {
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+  h2 {
+    font-size: 0.6rem;
+  }
+}

@@ -22,12 +22,12 @@ export default function Main() {
             <img src={gameCover} alt={g.name.substring(0,22)}></img>
             <div className={styles["infos"]}>
                 {/* limit characters to 22 */}
-                <p>{g.name.substring(0,22)}</p>
+                <p className={styles['gameName']}>{g.name.substring(0,22)}</p>
                 <p className={styles["tag"]}>{g.genres[0].name}</p>
                 <p className={styles["price"]}>$60</p>
             </div>
             <div className={styles["middle"]}>
-                <div className={styles["text"]}><a href="#0">More Details</a></div>
+                {/* <div className={styles["text"]}><a href="#0">More Details</a></div> */}
             </div>
         </div>
       

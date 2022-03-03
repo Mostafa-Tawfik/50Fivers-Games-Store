@@ -5,26 +5,37 @@
     display: flex;
     gap: 1em;
     flex-wrap: wrap;
+    justify-content: center;
     .games {
         display: flex;
         flex-direction: column;
         padding: 1em;
         background-color: black;
         border-radius: 10%;
-        height: 500px;
         position: relative;
         img {
             position: relative;
             // top: 0;
             // left: 0;
-            width: 250px;
-            height: 300px;
+            width: min(30vw, 250px);
+            height: min(40vw, 300px);
             border-radius: 15%;
             transition: 1s ease;
             object-fit:cover;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+                transform: scale(0.9);
+            }
         }
+
         .infos  {
             margin: 1em 0;
+            width: min(20vw, 250px);
+            .gameName {
+                cursor: pointer;
+            }
         }
         .middle {
             position: absolute;
@@ -35,32 +46,19 @@
             border-radius: 30%;
             transition: 1s ease;
         }
-        .text {
-            display: flex;
-            padding: 0.6em;
-            position: absolute;
-            top: 100px;
-            left: 50px;
-            a {
-                background: $clr-dark;
-                padding: 0.5em;
-                border-radius: 10px;
-            } 
-        } 
-    }
-}
-
-// animations
-.games:hover {
-    img {
-        opacity: 0.5;
-        transform: scale(0.9);
-    }
-    .middle {
-        opacity: 0.9;
-    }
-    .middle:hover {
-        transform: scale(1.2);
+        // .text {
+        //     display: flex;
+        //     padding: 0.6em;
+        //     position: absolute;
+        //     top: 120px;
+        //     left: 50px;
+        //     a {
+        //         background: $clr-dark;
+        //         padding: 0.5em;
+        //         border-radius: 10px;
+        //         white-space: nowrap;
+        //     } 
+        // } 
     }
 }
 
@@ -72,5 +70,5 @@
 
 .tag {
     color: gray;
-    font-size: smaller;
+    // font-size: smaller;
 }
