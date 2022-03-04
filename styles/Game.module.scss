@@ -21,13 +21,37 @@
     height: 100%;
     opacity: 0.1;
     object-fit: cover;
+    z-index: -1;
   }
   .game-img {
     width: min(60vw, 700px);
     border-radius: 30px;
+    z-index: -2;
   }
   .game-desc {
     width: min(60vw, 700px);
+  }
+  .game-cln {
+    width: min(60vw, 700px);
+    display: flex;
+    justify-content: space-around;
+  }
+  .game-btm-raw{
+    width: min(60vw, 700px);
+    a {
+      font-family: $pf;
+    }
+  }
+  .game-tags {
+    width: min(60vw, 700px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    color: gray;
+    li {
+      font-family: $pf;
+      list-style-type: none;
+    }
   }
 }
 
