@@ -19,31 +19,8 @@ function gameDetails({game}) {
 }
 export default gameDetails
 
-
-// set dynamic paths for each fetched id
-export async function getStaticPaths() {
-
-  const apiRoot= 'https://rawg.io/api/games'
-
-  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-01-01,2022-04-01&ordering=-added`)
-
-  const gameData = await res.json()
-
-  const paths = gameData.results.map(g => {
-    return {
-      params: { gameid: g.id.toString() }
-    }
-  })
-
-  return {
-    paths,
-    fallback: false
-  };
-}
-
-
 // set the data for each id
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
   const apiRoot= 'https://rawg.io/api/games'
   const id = context.params.gameid
