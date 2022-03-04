@@ -3,16 +3,9 @@ import styles from '../styles/components/_main.module.scss'
 import useSWR from 'swr'
 import Link from 'next/link'
 
-export default function Main() {
+export default function Main(props) {
 
-    const fetcher = (url) => fetch(url).then(r => r.json())
-    
-    const { data: games, error } = useSWR('/api/homegames', fetcher)
-
-  if (error) return <div>failed to load</div>
-  if (!games) return <div>loading...</div>
-  
-  const MainGames = games.results.map(g => {
+  const MainGames = props.games.results.map(g => {
     const gameCover = g.background_image
     return (
       
