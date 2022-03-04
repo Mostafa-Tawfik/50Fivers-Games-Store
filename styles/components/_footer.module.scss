@@ -1,5 +1,4 @@
 .footer {
-    // position: relative;
     bottom: 100px;
     margin-top: auto;
     display: flex;
@@ -28,10 +27,11 @@
 
 @media (max-width: 440px) {
     .footer {
-      // position: relative;
-      span , p {
-        font-size: 1rem;
-      }
+      .footer-sign {
+        span , p {
+          font-size: 1rem;
+        }
+        }
       img {
         width: 30px;
         height: 30px;
