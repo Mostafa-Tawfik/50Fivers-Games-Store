@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../styles/components/_main.module.scss'
-import useSWR from 'swr'
 import Link from 'next/link'
 
 export default function Main(props) {
