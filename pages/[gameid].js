@@ -4,12 +4,15 @@ import Head from 'next/head'
 
 // render page
 function gameDetails({game}) {
+  console.log(game)
   return (
     <div className={styles['game-layout']}>
       <Head>
         <title>{game.name}</title>
         <meta name="description" content={game.description_raw} />
       </Head>
+
+      <img src={game.background_image} alt={game.name} className={styles['game-bg']}></img>
 
       <h1>{game.name}</h1>
       <img src={game.background_image} alt={game.name} className={styles['game-img']}></img>
