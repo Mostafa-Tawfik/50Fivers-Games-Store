@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import React from 'react';
 import styles from '../styles/components/_aside.module.scss'
+
 
 export default function Aside() {
   return <div>
@@ -13,8 +15,8 @@ export default function Aside() {
       </div>
       <div className={styles["mid"]}>
           <h3>Genre</h3>
-          <div className={styles["item"]}><a href="#0">Action</a></div>
-          <div className={styles["item"]}><a href="#0">RPG</a></div>
+          <Link href="/action" className={styles["item"]}>Action</Link>
+          <Link href="/rpg" className={styles["item"]}>RPG</Link>
           <div className={styles["item"]}><a href="#0">Strategy</a></div>
           <div className={styles["item"]}><a href="#0">Simulation</a></div>
           <div className={styles["item"]}><a href="#0">Racing</a></div>

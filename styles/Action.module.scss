@@ -1,0 +1,86 @@
+@import './variables.scss';
+
+.main {
+  display: flex;
+  gap: 1em;
+  z-index: 10;
+}
+
+@media (max-width: 440px) {
+  .main {
+      margin-top: 150px;
+      display: block;
+  }
+}
+
+.main-layout {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    .games {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        background-color: black;
+        border-radius: 10%;
+        position: relative;
+        img {
+            position: relative;
+            // top: 0;
+            // left: 0;
+            width: min(30vw, 250px);
+            height: min(40vw, 300px);
+            border-radius: 15%;
+            transition: 1s ease;
+            object-fit:cover;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+                transform: scale(0.9);
+            }
+        }
+
+        .infos  {
+            margin: 1em 0;
+            width: min(20vw, 250px);
+            .gameName {
+                cursor: pointer;
+            }
+        }
+        .middle {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 0;
+            opacity: 0;
+            border-radius: 30%;
+            transition: 1s ease;
+        }
+        // .text {
+        //     display: flex;
+        //     padding: 0.6em;
+        //     position: absolute;
+        //     top: 120px;
+        //     left: 50px;
+        //     a {
+        //         background: $clr-dark;
+        //         padding: 0.5em;
+        //         border-radius: 10px;
+        //         white-space: nowrap;
+        //     } 
+        // } 
+    }
+}
+
+// rules
+.pricebefore {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.tag {
+    color: gray;
+    // font-size: smaller;
+}

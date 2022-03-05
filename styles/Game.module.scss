@@ -34,12 +34,42 @@
   .game-cln {
     width: min(60vw, 700px);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    .game-left-cln {
+      width: min(30vw, 3500px);
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      gap: 1em;
+      .game-metacritic {
+        a {
+          display: flex;
+          background-color: darkgreen;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5em;
+          border-radius: 10px;
+        }
+      }
+    }
+    .game-right-cln {
+      width: min(30vw, 3500px);
+      display: flex;
+      justify-content: right;
+    }
   }
   .game-btm-raw{
     width: min(60vw, 700px);
     a {
       font-family: $pf;
+    }
+    .game-Website {
+      a {
+        display:block;
+      }
     }
   }
   .game-tags {

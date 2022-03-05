@@ -21,28 +21,40 @@ function gameDetails({game}) {
       <div className={styles['game-cln']}>
 
         <div className={styles['game-left-cln']}>
-          <p>Release Date: {game.released}</p>
-          <p>Genres: {game.genres.map(d=>`${d.name} `)}</p>
-          <p>Platforms: {game.platforms.map(d=>`${d.platform.name} `)}</p>
-          {game.metacritic && <p>Metacritic: {game.metacritic}</p>}
+
+          <div>Release Date: <p>{game.released}</p></div>
+
+          <div>Genres: {game.genres.map(d=> <p key={d.id}>{d.name}</p> )}</div>
+
+          <div>Platforms: {game.platforms.map(d=> <p  key={d.platform.id}> {d.platform.name} </p> )}</div>
+
+          {game.metacritic && <div className={styles['game-metacritic']}>
+            Metacritic: 
+            <a href={game.metacritic_url} target={"_blank"} rel={"noreferrer"}>
+              {game.metacritic}
+            </a></div>}
+
         </div>
 
         <div className={styles['game-right-cln']}>
-          <p>Available on: {game.stores.map(s => <div>{s.store.name}</div> )}</p>
+          <div>Available on: {game.stores.map(s => <div key={s.id}><p>{s.store.name}</p></div> )}</div>
         </div>
 
       </div>
       
       <div className={styles['game-btm-raw']}>
-        <p>Developed by: {game.developers.map(d=>d.name)}</p>
-        <p>Publishers: {game.publishers.map(s=>`${s.name} `)}</p>
-        <p>Website: <a href={game.website} target={"_blank"} rel={"noreferrer"}>{game.name}</a></p>  
+        <div>Developed by: {game.developers.map(d=> <p key={d.id}> {d.name} </p>)}</div>
+
+        {game.publishers && <div>Publishers: {game.publishers.map(s=> <p key={s.id}> {s.name} </p>)}</div>}
+
+        <div className={styles['game-Website']}>Website: <a href={game.website} target={"_blank"} rel={"noreferrer"}>{game.name}</a></div>  
+
         {game.reddit_url && <p>Reddit: <a href={game.reddit_url} target={"_blank"} rel={"noreferrer"}>{game.name}</a></p>}
       </div>
 
-      <p className={styles['game-desc']}>{game.description_raw}</p>
+      <div className={styles['game-desc']}><p>{game.description_raw}</p></div>
 
-      <p className={styles['game-tags']}>{game.tags.map(t => <ul><li>{t.name}</li></ul> )}</p>
+      <div className={styles['game-tags']}>{game.tags.map(t => <li key={t.id}>{t.name}</li> )}</div>
 
     </div>
   )

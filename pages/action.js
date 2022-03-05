@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
 import Aside from '../components/Aside'
-import Main from '../components/Main';
+import Main from '../components/Main'
 
-export default function Home({games}) {
-  
+export default function action({games}) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,22 +22,16 @@ export default function Home({games}) {
   )
 }
 
-// const handleGenres = `genres=${g}&`
-
-
-
 // call the api to get featured games
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const apiRoot= 'https://rawg.io/api/games'
 
-  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-01-01,2022-04-01&ordering=-added`)
+  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&genres=4&dates=2022-01-01,2022-04-01&ordering=-added`)
 
   const gameData = await res.json()
 
   return {
-    props: {
-      games: gameData
-    },
+    props: {games: gameData},
   }
 }
