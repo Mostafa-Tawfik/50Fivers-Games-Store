@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 // render page
 function gameDetails({game}) {
-  console.log(game)
+  // console.log(game)
   return (
     <div className={styles['game-layout']}>
       <Head>
