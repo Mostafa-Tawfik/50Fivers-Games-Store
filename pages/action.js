@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Aside from '../components/Aside'
 import Main from '../components/Main'
+import styles from '../styles/Action.module.scss'
 
 export default function action({games}) {
 
