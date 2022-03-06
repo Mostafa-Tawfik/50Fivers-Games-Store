@@ -38,6 +38,22 @@ function gameDetails({game}) {
 
         <div className={styles['game-right-cln']}>
           <div>Available on: {game.stores.map(s => <div key={s.id}><p>{s.store.name}</p></div> )}</div>
+          <div className={styles['game-external-links']}>
+            {game.website &&
+            <div className={styles['game-Website']}>
+              <div>Website</div>
+              <a href={game.website} target={"_blank"} rel={"noreferrer"}><img src={game.background_image} alt={game.name}></img></a>
+            </div>
+            }
+
+            {game.reddit_url && 
+            <div>
+              <div>Reddit</div>
+              <a href={game.reddit_url} target={"_blank"} rel={"noreferrer"}><img src='https://api.iconify.design/logos/reddit-icon.svg'></img></a>
+              
+            </div>
+            }
+          </div>
         </div>
 
       </div>
@@ -47,9 +63,6 @@ function gameDetails({game}) {
 
         {game.publishers && <div>Publishers: {game.publishers.map(s=> <p key={s.id}> {s.name} </p>)}</div>}
 
-        <div className={styles['game-Website']}>Website: <a href={game.website} target={"_blank"} rel={"noreferrer"}>{game.name}</a></div>  
-
-        {game.reddit_url && <p>Reddit: <a href={game.reddit_url} target={"_blank"} rel={"noreferrer"}>{game.name}</a></p>}
       </div>
 
       <div className={styles['game-desc']}><p>{game.description_raw}</p></div>

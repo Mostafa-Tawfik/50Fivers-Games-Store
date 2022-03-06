@@ -36,7 +36,7 @@
     display: flex;
     justify-content: space-between;
     .game-left-cln {
-      width: min(30vw, 3500px);
+      width: min(30vw, 350px);
       display: flex;
       flex-direction: column;
       justify-content: left;
@@ -56,21 +56,43 @@
       }
     }
     .game-right-cln {
-      width: min(30vw, 3500px);
+      width: min(30vw, 350px);
       display: flex;
+      flex-direction: column;
       justify-content: right;
+      align-items: flex-end;
+      gap: 0.5em;
+      .game-external-links {
+        width: min(15vw, 175px);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 20px;
+        }
+        .game-Website {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     }
   }
   .game-btm-raw{
     width: min(60vw, 700px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
     a {
       font-family: $pf;
     }
-    .game-Website {
-      a {
-        display:block;
-      }
-    }
+
   }
   .game-tags {
     width: min(60vw, 700px);
