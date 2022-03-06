@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Aside from '../components/Aside'
-import Main from '../components/Main';
+import Main from '../components/Main'
+import Carousel from '../components/Carousel'
 
 export default function Home({games}) {
   
@@ -15,7 +16,8 @@ export default function Home({games}) {
       <section className={styles["layout"]}>
         <main className={styles['main']}>
           <Aside />
-          <Main games={games}/>
+          <Carousel games={games}/>
+          {/* <Main games={games}/> */}
         </main>
         
       </section>

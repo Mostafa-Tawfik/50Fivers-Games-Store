@@ -4,8 +4,8 @@ import styles from '../styles/components/_aside.module.scss'
 
 
 export default function Aside() {
-  return <div>
-    <aside className={styles['aside']}>
+  return <aside className={styles['aside']}>
+    
       <div className={styles["top"]}>
           <h3>BROWSE CATEGORIES</h3>
           <div className={styles["item"]}><a href="#0">Best Selling</a></div>
@@ -23,6 +23,5 @@ export default function Aside() {
           <div className={styles["item"]}><a href="#0">Sports</a></div>
           <div className={styles["item"]}><a href="#0">Shooter</a></div>
       </div>
-    </aside>
-  </div>;
+    </aside>;
 }

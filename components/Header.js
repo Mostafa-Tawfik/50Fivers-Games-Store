@@ -8,7 +8,7 @@ export default function Header() {
       
       <header className={styles['header']}>
           <img src='../images/logo.png' className={styles["App-logo"]} alt="logo" />
-          <h1>games Store</h1>
+          <h1>My Games</h1>
       </header>
 
       <nav className={styles['nav']}>

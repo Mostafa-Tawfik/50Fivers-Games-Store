@@ -5,7 +5,9 @@
     display: flex;
     gap: 1em;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: right;
+    width: min(80vw);
+    
     .games {
         display: flex;
         flex-direction: column;
@@ -15,8 +17,6 @@
         position: relative;
         img {
             position: relative;
-            // top: 0;
-            // left: 0;
             width: min(30vw, 250px);
             height: min(40vw, 300px);
             border-radius: 15%;
@@ -46,19 +46,6 @@
             border-radius: 30%;
             transition: 1s ease;
         }
-        // .text {
-        //     display: flex;
-        //     padding: 0.6em;
-        //     position: absolute;
-        //     top: 120px;
-        //     left: 50px;
-        //     a {
-        //         background: $clr-dark;
-        //         padding: 0.5em;
-        //         border-radius: 10px;
-        //         white-space: nowrap;
-        //     } 
-        // } 
     }
 }
 

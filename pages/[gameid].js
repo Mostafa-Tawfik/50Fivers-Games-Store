@@ -18,6 +18,8 @@ function gameDetails({game}) {
 
       <img src={game.background_image} alt={game.name} className={styles['game-img']}></img>
 
+      <div className={styles['game-desc']}><p>{game.description_raw}</p></div>
+
       <div className={styles['game-cln']}>
 
         <div className={styles['game-left-cln']}>
@@ -64,8 +66,6 @@ function gameDetails({game}) {
         {game.publishers && <div>Publishers: {game.publishers.map(s=> <p key={s.id}> {s.name} </p>)}</div>}
 
       </div>
-
-      <div className={styles['game-desc']}><p>{game.description_raw}</p></div>
 
       <div className={styles['game-tags']}>{game.tags.map(t => <li key={t.id}>{t.name}</li> )}</div>
 
