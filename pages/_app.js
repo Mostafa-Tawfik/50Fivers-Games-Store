@@ -7,8 +7,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
 
+      <img className="bg" src='../../images/rawpixel-id-2578750.png' alt="keyboard background"></img>
+      
       <section className="layout">
-        <img className="bg" src='../../images/rawpixel-id-2578750.png' alt="keyboard background"></img>
 
         <Header/>
         <Component {...pageProps}/>

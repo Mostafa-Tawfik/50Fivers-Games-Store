@@ -9,6 +9,7 @@ export default function Main(props) {
     return (
       
         <div  key={g.id} className={styles["games"]}>
+            
             <Link href={'/' + g.id}>
                 <img src={gameCover} alt={g.name.substring(0,22)}></img>
             </Link>
@@ -19,9 +20,6 @@ export default function Main(props) {
                 </Link>
                 <p className={styles["tag"]}>{g.genres[0].name}</p>
                 <p className={styles["price"]}>$60</p>
-            </div>
-            <div className={styles["middle"]}>
-                {/* <div className={styles["text"]}><a href="#0">More Details</a></div> */}
             </div>
         </div>
       

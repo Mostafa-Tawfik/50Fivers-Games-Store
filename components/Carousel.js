@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styles from '../styles/components/Carousel.module.scss'
+import Link from 'next/link'
 
 function Carousel(props) {
 
@@ -23,10 +24,12 @@ function Carousel(props) {
 
             <div className={styles['card']}>
 
-            <div className={styles["project-image-mobile"]} style={{backgroundImage:`url(${pro.background_image})`}}></div>
+            <Link href={'/' + pro.id} >
+              <div className={styles["project-image-mobile"]} style={{backgroundImage:`url(${pro.background_image})`}}></div>
+            </Link>
               
               <div className={styles['car-name']}>
-                <h2>{pro.name.substring(0,25)}</h2>
+              <Link href={'/' + pro.id}><h2>{pro.name.substring(0,25)}</h2></Link>
               </div>
               {/* <p>{pro.desc}</p> */}
             </div>

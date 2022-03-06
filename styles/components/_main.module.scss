@@ -59,3 +59,14 @@
     color: gray;
     // font-size: smaller;
 }
+
+// 
+@media (max-width: 440px) {
+    .main-layout {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: min(90vw);
+    }
+}
