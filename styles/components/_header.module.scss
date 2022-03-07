@@ -72,3 +72,9 @@
         }
     }
 }
+
+@media (max-width: 440px) {
+    .nav {
+      display: none;
+    }
+  }

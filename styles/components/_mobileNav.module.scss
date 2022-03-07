@@ -1,0 +1,64 @@
+@import '../variables.scss';
+
+.mobile-container {
+  width: 100%;
+  margin: auto;
+  background-color: rgb(51, 51, 51, 0.01);
+  height: min-content;
+  border-radius: 20px;
+  z-index: 30;
+  
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(51, 51, 51, 0.1);
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+  
+  
+}
+
+.topnav a, .topnav h3 {
+  color: white;
+  padding: 5px 15px;
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: rgb(221, 221, 221, 0.1);
+  color: rgb(255, 255, 255);
+}
+
+.active {
+  background: transparent;
+}
+
+@media (min-width: 440px) {
+  .mobile-container {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .mobile-container {
+    display:block;
+  }
+}

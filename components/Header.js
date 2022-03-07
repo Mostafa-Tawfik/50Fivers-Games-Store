@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/components/_header.module.scss'
 import Link from 'next/link'
+import MobileNav from './MobileNav';
 
 export default function Header() {
   return <div className={styles['header-showcase']}>
@@ -19,5 +20,7 @@ export default function Header() {
           <h2><a href="#0">CONTACT US</a></h2>
           <h2><a href="#0">MY ACCOUNT</a></h2>
       </nav>
+
+      <MobileNav />
   </div>;
 }

@@ -1,13 +1,26 @@
 .main {
   display: flex;
+  gap: 3em;
+  // justify-content: center;
+}
+.caro-holder {
+  display: flex;
   gap: 1em;
   justify-content: center;
+  width: min(70vw);
 }
 
 
 @media (max-width: 440px) {
   .main {
       margin-top: 150px;
-      // display: block;
+      justify-content: center;
+  }
+  .main-layout {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: min(90vw);
   }
 }

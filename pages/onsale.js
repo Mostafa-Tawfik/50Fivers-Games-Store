@@ -2,30 +2,35 @@ import Head from 'next/head'
 import styles from '../styles/Onsale.module.scss'
 import Aside from '../components/Aside'
 import Link from 'next/link'
+import React from 'react'
 
-export default function action({games}) {
+export default function action({games, cover}) {
+
+  console.log(cover)
 
     const MainGames = games.map(g => {
     const gameCover = g.thumb
-    return (
-      
-        <div key={g.gameID} className={styles["games"]}>
-            
-            {/* <Link href={'/' + g.internalName}> */}
-                <img src={gameCover} alt={g.title.substring(0,22)} className={styles['onsale-covers']}></img>
-            {/* </Link> */}
-            <div className={styles["infos"]}>
-                {/* limit characters to 22 */}
-                <Link href={'/' + g.id}>
-                    <p className={styles['gameName']}>{g.title}</p>
-                </Link>
-                {/* <p className={styles["tag"]}>{g.genres[0].name}</p> */}
-                <p className={styles["price"]}>${g.salePrice}</p>
-            </div>
-        </div>
-      
-    )
-    })
+    // const gameCover = g.
+
+  return (
+    
+      <div key={g.gameID} className={styles["games"]}>
+          
+          {/* <Link href={'/' + g.internalName}> */}
+              <img src={gameCover} alt={g.title.substring(0,22)} className={styles['onsale-covers']}></img>
+          {/* </Link> */}
+          <div className={styles["infos"]}>
+              {/* limit characters to 22 */}
+              <Link href={'/' + g.id}>
+                  <p className={styles['gameName']}>{g.title}</p>
+              </Link>
+              {/* <p className={styles["tag"]}>{g.genres[0].name}</p> */}
+              <p className={styles["price"]}>${g.salePrice}</p>
+          </div>
+      </div>
+    
+  )
+  })
 
   return (
     <div className={styles.container}>
@@ -56,7 +61,14 @@ export async function getStaticProps() {
 
   const gameData = await res.json()
 
-  return {
-    props: {games: gameData},
+  // const coverRes = await fetch(`https://www.gamespot.com/api/games/?api_key=eea4c300a10d9eda7d70b3d903f0cf1266f3d73b&format=json&filter=name:${coverData}`)
+  
+  // const coverResData = await coverRes.json()
+
+    return {
+    props: {
+      games: gameData,
+      // cover: coverResData
+    },
   }
 }
