@@ -2,8 +2,8 @@
 
 .carousel {
   position: relative;
-  width: min(30vw, 600px);
-  height: 360PX;
+  width: min(60vw, 800px);
+  height: 450PX;
   perspective: 500px;
   transform-style: preserve-3d;
   z-index: 20;
@@ -92,9 +92,17 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1440px) {
   .carousel {
     width: min(40vw, 600px);
+    height: 350px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .carousel {
+    width: min(40vw, 600px);
+    height: 350px;
   }
   .card-container {
     transform: 

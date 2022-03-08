@@ -1,13 +1,34 @@
 .main {
   display: flex;
   gap: 3em;
-  // justify-content: center;
 }
 .caro-holder {
   display: flex;
   gap: 1em;
   justify-content: center;
   width: min(70vw);
+}
+
+.cat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  margin: 5em 0;
+  
+}
+
+.caro-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  object-fit: cover;
+  z-index: 0;
+  filter: contrast(3);
 }
 
 
@@ -22,5 +43,8 @@
     flex-wrap: wrap;
     justify-content: center;
     width: min(90vw);
+  }
+  .cat-container h2 {
+    font-size: 1.2rem;
   }
 }
