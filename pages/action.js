@@ -28,7 +28,7 @@ export async function getStaticProps() {
 
   const apiRoot= 'https://rawg.io/api/games'
 
-  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&genres=4&metacritic=80,100&dates=2021-01-01,2022-06-01&ordering=-added&ordering=-metacritic`)
+  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&genres=4&metacritic=80,100&dates=2021-01-01,2022-06-01&ordering=-metacritic`)
 
   const gameData = await res.json()
 

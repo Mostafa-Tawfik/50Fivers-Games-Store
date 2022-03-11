@@ -3,9 +3,10 @@ import styles from '../styles/Home.module.scss'
 import Aside from '../components/Aside'
 import Carousel from '../components/Carousel'
 import CatShowcase from '../components/CatShowcase'
+import Hero from '../components/Hero'
 
-export default function Home({games, topRel, upcoming}) {
-  
+export default function Home({games, topRel, upcoming, featDetails}) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,11 +16,12 @@ export default function Home({games, topRel, upcoming}) {
 
       <section className={styles["layout"]}>
         <main className={styles['main']}>
-          <Aside />
-          <div className={styles['caro-holder']}>
+          {/* <Aside /> */}
+          <Hero games={games} featDetails={featDetails}/>
+          {/* <div className={styles['caro-holder']}>
             <img className={styles["caro-bg"]} src='../../images/sigmund-By-unsplash.jpg' alt="keyboard background"></img>
             <Carousel games={games}/>
-          </div>
+          </div> */}
         </main>
       </section>
 
@@ -44,9 +46,13 @@ export async function getServerSideProps() {
   const apiRoot= 'https://rawg.io/api/games'
 
   // fetch featured games
-  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-01-01,2022-04-01&ordering=-added`)
+  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-01-01,2022-04-01&ordering=-added&page=1&page_size=5`)
 
   const gameData = await res.json()
+
+  // fetch featured games details
+  const featDetails = await Promise.all(gameData.results.map((g) => fetch(`${apiRoot}/${g.id}?${process.env.rawgkey}`).then(data => data.json()))
+  ) 
 
   // fetch top release
   const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-02-08,2022-03-08&ordering=-metacritic&page=1&page_size=5`)
@@ -62,7 +68,8 @@ export async function getServerSideProps() {
     props: {
       games: gameData,
       topRel,
-      upcoming
+      upcoming,
+      featDetails
     },
   }
 }

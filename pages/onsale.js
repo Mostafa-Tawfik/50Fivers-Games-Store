@@ -6,7 +6,28 @@ import React from 'react'
 
 export default function action({games, cover}) {
 
+  
+  // const [steamid, setSteamid] = React.useState([])
+  
+  // React.useEffect(()=> {
+  //   setSteamid(games.map(g=> g.steamAppID*1))
+  // },[])
+
+  // const [steamGame, setsteamGame] = React.useState([])
+  
   console.log(cover)
+
+  // React.useEffect(()=> {
+  //   fetch(`https://store.steampowered.com/api/appdetails?appids=${steamid}`,
+  //    {
+  //     mode: 'cors', 
+  //     headers:{'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'} }
+  //    )
+  //   .then(res => res.json())
+  //   .then(data => setsteamGame(data))
+  // },[])
+
+
 
     const MainGames = games.map(g => {
     const gameCover = g.thumb
@@ -61,14 +82,32 @@ export async function getStaticProps() {
 
   const gameData = await res.json()
 
-  // const coverRes = await fetch(`https://www.gamespot.com/api/games/?api_key=eea4c300a10d9eda7d70b3d903f0cf1266f3d73b&format=json&filter=name:${coverData}`)
   
-  // const coverResData = await coverRes.json()
+
+  const steamids = gameData.map(g=> g.title)
+
+  // const coverRes = steamids.map(g =>
+  //    fetch(`https://www.gamespot.com/api/games/?api_key=eea4c300a10d9eda7d70b3d903f0cf1266f3d73b&format=json&limit=1&filter=name:${g.title}`)
+  //    .then(res => res.json())
+  // )
+
+  async function ff() {
+
+    const coverRes = await fetch(`https://www.gamespot.com/api/games/?api_key=eea4c300a10d9eda7d70b3d903f0cf1266f3d73b&format=json&limit=1&filter=name:${gameData[3].title}`)
+  
+    const cov = await coverRes.json()
+      
+      // return Promise.all(coverRes)
+  
+    ret(cov)
+  }
+  
+  
 
     return {
     props: {
       games: gameData,
-      // cover: coverResData
+      cover: JSON.parse(JSON.stringify(ff))
     },
   }
 }

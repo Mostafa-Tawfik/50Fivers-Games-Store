@@ -1,0 +1,137 @@
+@import '../variables.scss';
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  object-fit: cover;
+  z-index: 0;
+  filter: contrast(4);
+  filter:blur(5px);
+}
+
+.main-img {
+  z-index: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  object-fit:cover;
+  filter: contrast(1.1);
+  filter:blur(1.5px);
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min(70vw);
+  height: min(66vh);
+  gap: 2em;
+  padding: 3em 0;
+
+  .hero-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2em;
+    width: 100%;
+    z-index: 10;
+    .hero-des {
+      width: 30%;
+      backdrop-filter: blur(2px);
+    }
+  }
+}
+
+.games-container {
+  display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  margin-top: auto;
+  backdrop-filter: blur(2px);
+  .games {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5em;
+      border-radius: 10px;
+      position: relative;
+      img {
+          position: relative;
+          width: min(15vw, 125px);
+          height: min(20vw, 150px);
+          border-radius: 15px;
+          transition: 0.7s ease;
+          object-fit:cover;
+          cursor: pointer;
+  
+          &:hover {
+              filter: brightness(1.3);
+              transform: scale(1.02);
+          }
+      }
+  
+      .infos  {
+          margin: 1em 0;
+          width: min(10vw, 125px);
+          .gameName {
+              cursor: pointer;
+              font-size: 1rem;
+              text-align: center;
+          }
+      }
+  }
+}
+
+// 
+@media (max-width: 440px) {
+    .main-layout {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: min(90vw);
+    }
+    .hero-container {
+      gap: 2em;
+      padding: 3em 0;
+    
+      .hero-infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2em;
+        width: 100%;
+        z-index: 10;
+        .hero-des {
+          width: 70%;
+          backdrop-filter: blur(2px);
+        }
+        h2, p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .games-container {
+      .games {
+          .infos  {
+              margin: 0;
+              width: 100%;
+              .gameName {
+                  cursor: pointer;
+                  font-size: 0.7rem;
+                  text-align: center;
+              }
+          }
+      }
+    }
+}
