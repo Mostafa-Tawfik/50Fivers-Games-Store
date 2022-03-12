@@ -11,8 +11,6 @@ function Hero(props) {
     setMainGame(filter[0])
   }
 
-  console.log(mainGame)
-
   const homeHero = props.games.results.map(g => {
     const gameCover = g.background_image
     return (

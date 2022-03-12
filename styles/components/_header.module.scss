@@ -1,5 +1,5 @@
 .header-showcase {
-    z-index: 10;
+    z-index: 30;
     display: flex;
     justify-content: space-between;
     padding: 1em 3em;
@@ -8,7 +8,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // padding: 1em 4em 0 2em;
     gap: 20px;
     text-transform: uppercase;
     z-index: 20;
@@ -45,19 +44,21 @@
 .nav {
     display: flex;
     gap: 1em;
-    // padding: 0 2em 1em ;
     z-index: 20;
     align-items: center;
     h2 {
         z-index: 20;
     }
-    // :nth-last-child(1) {
-    //     margin-left: auto;
-    // }
-
     h2:hover{
-        transform: scale(1.05);
         transition: 0.7s ease;
+    }
+    .nav-cat {
+        cursor: pointer;
+        .nav-cat_li {
+            backdrop-filter: blur(8px);
+            list-style: none;
+            position: absolute;
+        }
     }
 }
 
@@ -90,10 +91,7 @@
             width: 100%;
         }
     }
-}
-
-@media (max-width: 440px) {
     .nav {
       display: none;
     }
-  }
+}
