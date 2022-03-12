@@ -41,16 +41,20 @@ function Hero(props) {
 
       <div className={styles['hero-infos']}>
 
-        <h2>{mainGame.name}</h2>
-        <p>{mainGame.genres[0].name}</p>
+        <div className={styles['infos-head']}>
+          <h2>{mainGame.name}</h2>
+          <div className={styles['infos-head_genres']}>{mainGame.genres.map(g => <p key={g.id}>{g.name}</p>)}</div>
+        </div>
+
         <p className={styles['hero-des']}>{mainGame.description_raw.substring(0,200)} ...</p>
+
+        <button className={styles['hero-btn']}><Link href={'/'+mainGame.id}>More Details
+        </Link></button>
 
       </div>
 
       <div className={styles['games-container']}>
-
         {homeHero}
-
       </div>
     </div>
   )

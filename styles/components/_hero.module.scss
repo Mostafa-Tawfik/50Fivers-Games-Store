@@ -44,10 +44,19 @@
     gap: 2em;
     width: 100%;
     z-index: 10;
+    .infos-head {
+      .infos-head_genres {
+        display: flex;
+        gap: 0.2em;
+      }
+    }
     .hero-des {
       width: 30%;
       backdrop-filter: blur(2px);
     }
+  }
+  .hero-btn {
+    @include slideSolidBtn;
   }
 }
 
