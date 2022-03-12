@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       
       <section className="layout">
         
-        <img className="bg" src='../../images/rawpixel-id-2578750.png' alt="keyboard background"></img>
+        <img className="bg" src='../../images/rawpixel-id-3114099.png' alt="keyboard background"></img>
 
         <Header/>
         <Component {...pageProps}/>
