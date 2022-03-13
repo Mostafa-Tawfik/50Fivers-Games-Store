@@ -38,8 +38,23 @@ export async function getServerSideProps() {
 
   const apiRoot= 'https://rawg.io/api/games'
 
+  // handle the dates
+  var date = new Date()
+  var day = ("0" + (date.getDate())).slice(-2)
+  var month = ("0" + (date.getMonth() + 1)).slice(-2)
+  var year = date.getFullYear()
+
+  // set last month
+  date.setDate(date.getDate() - 30);
+  var lastMonth = ("0" + (date.getMonth() + 1)).slice(-2)
+
+  // set last month
+  date.setDate(date.getDate() + 360);
+  var nextHalf = ("0" + (date.getMonth() + 1)).slice(-2)
+  var nextYear = date.getFullYear()
+
   // fetch featured games
-  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-01-01,2022-04-01&ordering=-added&page=1&page_size=5`)
+  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-01-01,${year}-${month}-${day}&ordering=-added&page=1&page_size=5`)
 
   const gameData = await res.json()
 
@@ -48,12 +63,12 @@ export async function getServerSideProps() {
   ) 
 
   // fetch top release
-  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-02-08,2022-03-08&ordering=-metacritic&page=1&page_size=5`)
+  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${lastMonth}-${day},${year}-${month}-${day}&ordering=-metacritic&page=1&page_size=5`)
 
   const topRel = await topRelRes.json()
 
   // fetch upcoming
-  const upcomingGames = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-03-08,2022-09-08&ordering=-rating&page=1&page_size=5`)
+  const upcomingGames = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${month}-${day},${nextYear}-${nextHalf}-${day}&ordering=-rating&page=1&page_size=5`)
 
   const upcoming = await upcomingGames.json()
 
