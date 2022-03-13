@@ -19,7 +19,6 @@ function CatShowcase(props) {
                     <p className={styles['gameName']}>{g.name.substring(0,22)}</p>
                 </Link>
                 <p className={styles["tag"]}>{g.genres[0].name}</p>
-                <p className={styles["price"]}>$60</p>
             </div>
         </div>
       
