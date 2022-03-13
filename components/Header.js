@@ -7,13 +7,12 @@ export default function Header() {
 
   const cat = ['Action', 'RPG', 'Strategy', 'Simulation', 'Racing', 'Sports', 'Shooter']
 
-  const trends = ['Best Selling', 'Upcoming', 'New Releases', 'On Sale']
+  const trends = ['Upcoming', 'New Releases', 'On Sale']
 
   const [isOpen, SetIsOpen] = React.useState({
     cat: false,
     trends: false
-  }
-  )
+  })
 
   function openMenuCat() {
     SetIsOpen(prev => {
@@ -50,25 +49,25 @@ export default function Header() {
           <h2><Link href="/">HOME</Link></h2>
           <h2><a href="#0">NEWS</a></h2>
 
-          <div className={styles["nav-cat"]}>
+          <div className={styles["nav-drop"]}>
 
             <h2 onClick={openMenuTrends}>TRENDS</h2>
 
-            <ul className={styles["nav-cat_li"]} style={isOpen.trends ? { display: 'block' } : { display: 'none' }}>
+            <ul className={styles["nav-drop_li"]} style={isOpen.trends ? { display: 'block' } : { display: 'none' }}>
 
               {trends.map((c,i) => 
-              <li key={i} onClick={openMenuTrends}>
+              <li key={i} onClick={openMenuTrends} className={styles['nav-drop_li-item']}>
                 <Link href={'/'+c.toLowerCase().replace(/\s+/g, '')}>{c}</Link>
               </li>)}
             </ul>
 
           </div>
           
-          <div className={styles["nav-cat"]}>
+          <div className={styles["nav-drop"]}>
 
             <h2 onClick={openMenuCat}>CATEGORIES</h2>
 
-            <ul className={styles["nav-cat_li"]} style={isOpen.cat ? { display: 'block' } : { display: 'none' }}>
+            <ul className={styles["nav-drop_li"]} style={isOpen.cat ? { display: 'block' } : { display: 'none' }}>
 
               {cat.map((c,i) => 
               <li key={i} onClick={openMenuCat}>

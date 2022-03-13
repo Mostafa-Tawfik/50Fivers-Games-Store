@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Action.module.scss'
-import Aside from '../components/Aside'
 import Main from '../components/Main'
 
 export default function action({games}) {
+
+  const pageName = 'RPG Games'
 
   return (
     <div className={styles.container}>
@@ -14,8 +15,7 @@ export default function action({games}) {
 
       <section className={styles["layout"]}>
         <main className={styles['main']}>
-          <Aside />
-          <Main games={games}/>
+          <Main games={games} pageName={pageName}/>
         </main>
         
       </section>

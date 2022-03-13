@@ -4,7 +4,7 @@ import styles from '../styles/Action.module.scss'
 
 export default function action({games}) {
 
-  const pageName = 'Action Games'
+  const pageName = 'UP COMING'
 
   return (
     <div className={styles.container}>
@@ -14,6 +14,11 @@ export default function action({games}) {
       </Head>
 
       <section className={styles["layout"]}>
+        
+        {/* <div style={{marginLeft: '70px'}}>
+          <h1>UP COMING</h1>
+        </div> */}
+
         <main className={styles['main']}>
           <Main games={games} pageName={pageName}/>
         </main>
@@ -28,11 +33,12 @@ export async function getStaticProps() {
 
   const apiRoot= 'https://rawg.io/api/games'
 
-  const res = await fetch(`${apiRoot}?${process.env.rawgkey}&genres=4&metacritic=80,100&dates=2021-01-01,2022-06-01&ordering=-metacritic`)
+  // fetch upcoming
+  const upcomingGames = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-03-08,2022-09-08&ordering=-rating&page=1&page_size=15`)
 
-  const gameData = await res.json()
+  const upcoming = await upcomingGames.json()
 
   return {
-    props: {games: gameData},
+    props: {games: upcoming},
   }
 }

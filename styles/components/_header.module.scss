@@ -23,7 +23,6 @@
     }
 }
 
-  
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: shake 4.72s ease infinite;
@@ -52,12 +51,24 @@
     h2:hover{
         transition: 0.7s ease;
     }
-    .nav-cat {
+    .nav-drop {
         cursor: pointer;
-        .nav-cat_li {
+        .nav-drop_li {
             backdrop-filter: blur(8px);
             list-style: none;
             position: absolute;
+            background-color: rgb(0, 0, 0, 0.2);
+            li {
+
+                margin-top: 0.2em;
+            }
+            a {
+                &:hover {
+                    background: white;
+                    color: black;
+                    padding: 0 0.3em;
+                }
+            }
         }
     }
 }

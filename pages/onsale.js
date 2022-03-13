@@ -4,24 +4,40 @@ import Aside from '../components/Aside'
 import Link from 'next/link'
 import React from 'react'
 
-export default function action({games}) {
+export default function action({games, onSaleDetails}) {
 
-    const MainGames = games.map(g => {
-    const gameCover = g.thumb
+  // const [covers, setCovers] = React.useState()
+
+  // React.useEffect(()=> {
+  //   onSaleDetails.map(g => setCovers(g))
+  // },[])
+
+  // console.log(covers['224760'].data.background)
+
+
+  // function changeMainGame(g) {
+  //   const filter = onSaleDetails.filter(f => Object.keys(f[0]) === g )
+  //   console.log(filter)
+  // }
+  
+  const MainGames = games.map(g => {
+    const cover = g.thumb
+    
+
 
   return (
     
       <div key={g.gameID} className={styles["games"]}>
           
           {/* <Link href={'/' + g.internalName}> */}
-              <img src={gameCover} alt={g.title.substring(0,22)} className={styles['onsale-covers']}></img>
+              <img src={cover} alt={g.title.substring(0,22)} className={styles['onsale-covers']}></img>
           {/* </Link> */}
           <div className={styles["infos"]}>
               {/* limit characters to 22 */}
               <Link href={'/' + g.id}>
                   <p className={styles['gameName']}>{g.title}</p>
               </Link>
-              {/* <p className={styles["tag"]}>{g.genres[0].name}</p> */}
+              <p className={styles["tag"]}>{g.steamAppID}</p>
               <p className={styles["price"]}>${g.salePrice}</p>
           </div>
       </div>
@@ -54,13 +70,18 @@ export async function getStaticProps() {
 
   const apiRoot= 'https://www.cheapshark.com/api/1.0/deals'
 
-  const res = await fetch(`${apiRoot}?storeID=1&upperPrice=15&sortBy=Metacritic`)
+  const res = await fetch(`${apiRoot}?storeID=1&upperPrice=15&sortBy=Metacritic&pageSize=15`)
 
   const gameData = await res.json()
 
-    return {
+  // fetch featured games details
+  const onSaleDetails = await Promise.all(gameData.map((g) => fetch(`https://store.steampowered.com/api/appdetails?appids=${g.steamAppID}`).then(data => data.json()))
+  )
+  
+  return {
     props: {
       games: gameData,
+      onSaleDetails
     },
   }
 }

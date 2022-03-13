@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import Aside from '../components/Aside'
-import Carousel from '../components/Carousel'
 import CatShowcase from '../components/CatShowcase'
 import Hero from '../components/Hero'
 
@@ -16,12 +14,7 @@ export default function Home({games, topRel, upcoming, featDetails}) {
 
       <section className={styles["layout"]}>
         <main className={styles['main']}>
-          {/* <Aside /> */}
           <Hero games={games} featDetails={featDetails}/>
-          {/* <div className={styles['caro-holder']}>
-            <img className={styles["caro-bg"]} src='../../images/sigmund-By-unsplash.jpg' alt="keyboard background"></img>
-            <Carousel games={games}/>
-          </div> */}
         </main>
       </section>
 
