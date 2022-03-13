@@ -34,15 +34,15 @@
         img {
             position: relative;
             border-radius: 10px;
-            width: min(25vw, 120px);
-            height: min(10vw, 45px);
+            width: min(25vw, 200px);
+            height: min(30vw, 250px);
             transition: 0.7s ease;
             object-fit:cover;
             cursor: pointer;
 
             &:hover {
                 filter: brightness(1.2);
-                transform: scale(1.2);
+                transform: scale(1.07);
             }
         }
 
