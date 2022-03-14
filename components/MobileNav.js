@@ -14,8 +14,8 @@ function MobileNav() {
   <div className={styles["mobile-container"]}>
 
     <div className={styles["topnav"]}>  
-      <Link href="/" className={styles["active"]} onClick={openMenu}><h3>HOME</h3></Link>
       <div id="myLinks" style={isOpen ? { display: 'block' } : { display: 'none' }}>
+        <Link href="/"><h3 onClick={openMenu}>HOME</h3></Link>
         <Link href="/onsale"><h3 onClick={openMenu}>On Sale!</h3></Link>
         <Link href="/action"><h3 onClick={openMenu}>Action</h3></Link>
         <Link href="/rpg"><h3 onClick={openMenu}>RPG</h3></Link>
@@ -26,7 +26,7 @@ function MobileNav() {
         <Link href="/shooter"><h3 onClick={openMenu}>Shooter</h3></Link>
       </div>
       <a href="#" className={styles["icon"]} onClick={openMenu}>
-        <i className={styles["ham"]}>&#x25BC;</i>
+        <img src='https://api.iconify.design/charm/menu-hamburger.svg?color=white' className={styles["ham"]}></img>
       </a>
     </div>
 

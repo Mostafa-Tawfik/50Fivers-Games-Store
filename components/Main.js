@@ -27,6 +27,8 @@ export default function Main(props) {
 
   return <div>
 
+      <img className="bg" src='../../images/rawpixel-id-3114099.png' alt="keyboard background"></img>
+
       <h1>{props.pageName}</h1>
       <article className={styles['main-layout']}>
         {MainGames}

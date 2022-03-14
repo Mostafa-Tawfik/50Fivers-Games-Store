@@ -64,8 +64,9 @@ export default function action({games, onSaleDetails}) {
 
       <section className={styles["layout"]}>
         <main className={styles['main']}>
+          <img className="bg" src='../../images/rawpixel-id-3114099.png' alt="keyboard background"></img>
           <div>
-            <h1>TOP GAMES ON SALE!</h1>
+            <h1>ON SALE!</h1>
             <article className={styles['main-layout']}>
               {MainGames}
             </article>
