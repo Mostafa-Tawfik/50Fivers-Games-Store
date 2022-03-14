@@ -1,0 +1,42 @@
+@import './variables.scss';
+.page-title {
+  margin-left: 1em;
+}
+.news_holder {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.news_card {
+  width: min(40vw, 500px);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  .news_card-img {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      width: min(40vw, 500px);
+    }
+    &:hover >.news_card-summary{
+      transform: translateY(0px);
+      overflow: visible;
+    }
+  }
+  .news_card-summary {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(80px);
+    text-align: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: min(40vw, 500px);
+    padding: 1em;
+    transition: 0.7s ease;
+    
+  }
+}

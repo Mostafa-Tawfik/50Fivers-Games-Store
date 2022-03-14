@@ -9,6 +9,7 @@ export default function Header() {
 
   const trends = ['Upcoming', 'New Releases', 'On Sale']
 
+
   const [isOpen, SetIsOpen] = React.useState({
     cat: false,
     trends: false
@@ -23,7 +24,7 @@ export default function Header() {
       }
     })
   }
-
+  
   function openMenuTrends() {
     SetIsOpen(prev => {
       return {
@@ -47,7 +48,7 @@ export default function Header() {
 
       <nav className={styles['nav']}>
           <h2><Link href="/">HOME</Link></h2>
-          <h2><a href="#0">NEWS</a></h2>
+          <h2><Link href="/news">NEWS</Link></h2>
 
           <div className={styles["nav-drop"]}>
 
@@ -57,6 +58,7 @@ export default function Header() {
 
               {trends.map((c,i) => 
               <li key={i} onClick={openMenuTrends} className={styles['nav-drop_li-item']}>
+                {/* remove spaces */}
                 <Link href={'/'+c.toLowerCase().replace(/\s+/g, '')}>{c}</Link>
               </li>)}
             </ul>
@@ -67,7 +69,7 @@ export default function Header() {
 
             <h2 onClick={openMenuCat}>CATEGORIES</h2>
 
-            <ul className={styles["nav-drop_li"]} style={isOpen.cat ? { display: 'block' } : { display: 'none' }}>
+            <ul className={styles["nav-drop_li"]} style={ isOpen.cat ? { display: 'block' } : { display: 'none' }}>
 
               {cat.map((c,i) => 
               <li key={i} onClick={openMenuCat}>
