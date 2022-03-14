@@ -16,6 +16,7 @@ function MobileNav() {
     <div className={styles["topnav"]}>  
       <div id="myLinks" style={isOpen ? { display: 'block' } : { display: 'none' }}>
         <Link href="/"><h3 onClick={openMenu}>HOME</h3></Link>
+        <Link href="/news"><h3 onClick={openMenu}>News</h3></Link>
         <Link href="/onsale"><h3 onClick={openMenu}>On Sale!</h3></Link>
         <Link href="/action"><h3 onClick={openMenu}>Action</h3></Link>
         <Link href="/rpg"><h3 onClick={openMenu}>RPG</h3></Link>
