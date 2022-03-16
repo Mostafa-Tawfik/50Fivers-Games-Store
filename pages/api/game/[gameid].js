@@ -12,7 +12,7 @@ export default async function handler({ query: { gameid } }, res) {
         'Client-ID': `${process.env.igdbKey}`,
         'Authorization': `${process.env.igdbToken}`,
     },
-    data: `where id = ${gameid}; fields name,cover.url,rating,summary,screenshots.url,genres.name;`
+    data: `where id = ${gameid}; fields name,cover.url,rating,summary,screenshots.url,genres.name,release_dates.human,platforms.abbreviation,websites.*,artworks.*,involved_companies.company.name,videos.*,ports;`
 
   })
   .then(response => {
