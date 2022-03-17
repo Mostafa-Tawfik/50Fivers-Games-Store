@@ -78,6 +78,9 @@ export default function Header() {
             </ul>
 
           </div>
+
+          <Link href='/search'><img src='https://api.iconify.design/wpf/search.svg?color=white' className={styles['search-btn']}></img></Link>
+
       </nav>
 
   </div>;

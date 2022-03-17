@@ -28,6 +28,10 @@
     border-radius: 30px;
     z-index: -20;
   }
+  .game-img-igdb {
+    filter: saturate(1.3);
+    z-index: -20;
+  }
   .game-desc {
     width: min(60vw, 700px);
   }

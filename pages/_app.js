@@ -24,8 +24,6 @@ function MyApp({ Component, pageProps }) {
         
         <img className="bg" src='../../images/rawpixel-id-3114099.png' alt="keyboard background"></img>
 
-        <Link href='/search'><img src='https://api.iconify.design/wpf/search.svg?color=white' className='search-btn'></img></Link>
-
         <Header/>
         <Component {...pageProps}/>
         <Footer/>

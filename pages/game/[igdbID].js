@@ -7,7 +7,7 @@ function gameDetails({game}) {
 
   console.log(game)
 
-  const youtube = `https://www.youtube.com/embed/${game.videos[1].video_id}`
+  const youtube = `https://www.youtube.com/embed/${game.videos[0].video_id}`
 
   return (
     <div className={styles['game-layout']}>
@@ -21,9 +21,9 @@ function gameDetails({game}) {
 
       <img src={game.cover.url.replace('thumb', 'cover_big')} alt={game.name} className={styles['game-img-igdb']}></img>
 
-      <iframe width="420" height="315" frameBorder="0"
+      {game.videos[0] && <iframe width="420" height="315" frameBorder="0"
         src={youtube}>
-      </iframe>
+      </iframe>}
 
       <div className={styles['game-desc']}><p>{game.summary}</p></div>
 
@@ -31,7 +31,7 @@ function gameDetails({game}) {
 
         <div className={styles['game-left-cln']}>
 
-          <div>Release Date: <p>{game.release_dates[0].human}</p></div>
+        {game.release_dates[0] && <div>Release Date: <p>{game.release_dates[0].human}</p></div>}
 
           <div>Genres: {game.genres.map(d=> <p key={d.id}>{d.name}</p> )}</div>
 
