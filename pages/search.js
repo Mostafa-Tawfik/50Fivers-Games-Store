@@ -27,6 +27,14 @@ function Search() {
       </Head>
 
       <div className={styles['query_holder']}>
+
+        {matchedGame[0] && 
+        <div>
+          {matchedGame[0].cover && 
+          <img src={matchedGame[0].cover.url.replace('thumb', '1080p')} className={styles['query_holder-bg']}>
+          </img>}
+        </div> }
+
         <input className={styles['query_holder_input']}
           type='text'
           placeholder='Search by Game Name'
