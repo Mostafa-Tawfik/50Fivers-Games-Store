@@ -9,6 +9,8 @@ function Search() {
   const [value] = useDebounce(query, 800)
   const [matchedGame, setMatchedGame] = React.useState([])
 
+  console.log(matchedGame)
+
   function handleChange(event) {
     setQuery(event.target.value)
   }

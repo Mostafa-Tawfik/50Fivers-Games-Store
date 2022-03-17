@@ -9,15 +9,15 @@ function SearchResult(props) {
       
         <div  key={g.id} className={styles["games"]}>
             
-            {g.cover && <Link href={'/game/' + g.id}> 
+            {g.cover ? <Link href={'/game/' + g.id}> 
                 <img src={g.cover.url.replace('thumb', 'cover_big')} alt={g.name.substring(0,22)}></img>
-            </Link>}
+            </Link> : <Link href={'/game/' + g.id}><div className={styles['notfound']}>&#10060;</div></Link>}
             <div className={styles["infos"]}>
                 {/* limit characters to 22 */}
-                <Link href={'/' + g.id}>
+                <Link href={'/game/' + g.id}>
                     <p className={styles['gameName']}>{g.name.substring(0,22)}</p>
                 </Link>
-                <p className={styles["tag"]}>{g.genres[0].name}</p>
+                {g.genres && <p className={styles["tag"]}>{g.genres[0].name}</p>}
             </div>
         </div>
       
