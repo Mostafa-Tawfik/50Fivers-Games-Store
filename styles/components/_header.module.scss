@@ -59,14 +59,13 @@
             position: absolute;
             background-color: rgb(0, 0, 0, 0.2);
             li {
-
+                padding: 0.2em 1em;
                 margin-top: 0.2em;
             }
             a {
                 &:hover {
                     background: white;
                     color: black;
-                    padding: 0 0.3em;
                 }
             }
         }
