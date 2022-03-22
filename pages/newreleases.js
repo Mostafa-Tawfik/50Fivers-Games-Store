@@ -28,8 +28,18 @@ export async function getStaticProps() {
 
   const apiRoot= 'https://rawg.io/api/games'
 
+  // handle the dates
+  var date = new Date()
+  var day = ("0" + (date.getDate())).slice(-2)
+  var month = ("0" + (date.getMonth() + 1)).slice(-2)
+  var year = date.getFullYear()
+
+  // set last month
+  date.setDate(date.getDate() - 30);
+  var lastMonth = ("0" + (date.getMonth() + 1)).slice(-2)
+
   // fetch top release
-  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=2022-02-08,2022-03-08&ordering=-metacritic&page=1&page_size=20`)
+  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${lastMonth}-${day},${year}-${month}-${day}&ordering=-metacritic&page=1&page_size=20`)
 
   const topRel = await topRelRes.json()
 

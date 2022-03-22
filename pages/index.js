@@ -48,7 +48,7 @@ export async function getServerSideProps() {
   date.setDate(date.getDate() - 30);
   var lastMonth = ("0" + (date.getMonth() + 1)).slice(-2)
 
-  // set last month
+  // set future dates
   date.setDate(date.getDate() + 180);
   var nextHalf = ("0" + (date.getMonth() + 1)).slice(-2)
   var nextYear = date.getFullYear()
