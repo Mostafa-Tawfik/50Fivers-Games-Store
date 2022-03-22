@@ -5,7 +5,15 @@ import MobileNav from './MobileNav';
 
 export default function Header() {
 
-  const cat = ['Action', 'RPG', 'Strategy', 'Simulation', 'Racing', 'Sports', 'Shooter']
+  const cat = [
+    { id: 4, name:'Action' },
+    { id: 5, name:'RPG' },
+    { id: 10, name:'Strategy' },
+    { id: 14, name:'Simulation' },
+    { id: 1, name:'Racing' },
+    { id: 15, name:'Sports' },
+    { id: 2, name:'Shooter' },
+  ]
 
   const trends = ['Upcoming', 'New Releases', 'On Sale']
 
@@ -73,7 +81,7 @@ export default function Header() {
 
               {cat.map((c,i) => 
               <li key={i} onClick={openMenuCat}>
-                <Link href={'/'+c.toLowerCase()}>{c}</Link>
+                <Link href={'/genres/'+c.id}>{c.name}</Link>
               </li>)}
             </ul>
 
