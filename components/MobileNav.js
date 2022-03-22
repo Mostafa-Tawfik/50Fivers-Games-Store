@@ -8,7 +8,15 @@ function MobileNav() {
   const trends = ['Upcoming', 'New Releases', 'On Sale']
 
   // elements of categories menu
-  const catMenu = ['Action', 'RPG', 'Strategy', 'Simulation', 'Racing', 'Sports', 'Shooter']
+  const catMenu = [
+    { id: 4, name:'Action' },
+    { id: 5, name:'RPG' },
+    { id: 10, name:'Strategy' },
+    { id: 14, name:'Simulation' },
+    { id: 1, name:'Racing' },
+    { id: 15, name:'Sports' },
+    { id: 2, name:'Shooter' },
+  ]
   
   // state to controll the whole menu
   const [isOpen, SetIsOpen] = React.useState(false)
@@ -69,7 +77,7 @@ function MobileNav() {
           {catMenu.map((c, i) => {
             return (
               <li key={i} className={styles['topnav_sublist']}>
-                <Link href={'/'+c.toLowerCase().replace(/\s+/g, '')}><h3 onClick={()=> {openMenu(),openCategoriesMenu()}} >{c}</h3></Link>
+                <Link href={'/genres/'+c.id}><h3 onClick={()=> {openMenu(),openCategoriesMenu()}} >{c.name}</h3></Link>
               </li>
             )
           })}
