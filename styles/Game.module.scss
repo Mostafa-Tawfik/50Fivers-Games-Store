@@ -131,7 +131,14 @@
     }
     .game-desc {
       width: min(80vw, 700px);
-      font-size: larger;
+      p {
+        font-size: 0.9rem;
+        line-height: 20px;
+      }
+    }
+    .game-tags {
+      gap: 0.5em;
+      font-size: 0.7rem;
     }
   }
 }

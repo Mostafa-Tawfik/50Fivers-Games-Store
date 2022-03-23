@@ -45,18 +45,24 @@
     width: 100%;
     z-index: 10;
     .infos-head {
+      h2 {
+        font-size: 3rem;
+        font-weight: 800;
+      }
       .infos-head_genres {
         display: flex;
         gap: 0.2em;
       }
     }
     .hero-des {
-      width: 30%;
+      width: 50%;
       backdrop-filter: blur(2px);
+      font-size: 1rem
     }
   }
   .hero-btn {
     @include slideSolidBtn;
+    padding: 1em;
   }
 }
 
@@ -122,11 +128,22 @@
         width: 100%;
         z-index: 10;
         .hero-des {
-          width: 70%;
+          width: 90%;
           backdrop-filter: blur(2px);
         }
         h2, p {
           font-size: 1rem;
+        }
+        .infos-head {
+          h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 40px;
+          }
+          .infos-head_genres {
+            display: flex;
+            gap: 0.2em;
+          }
         }
       }
     }
