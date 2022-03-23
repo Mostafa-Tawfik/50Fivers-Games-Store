@@ -87,7 +87,16 @@
     color: gray;
 }
 
-// 
+// media queries
+@media (max-width: 800px) {
+    .featGame {
+        .infos  {
+            position: relative;
+            transform: translateY(0px);
+        }
+    }
+}
+
 @media (max-width: 440px) {
     .main-layout {
         display: flex;
@@ -95,11 +104,5 @@
         flex-wrap: wrap;
         justify-content: center;
         width: min(90vw);
-    }
-    .featGame {
-        .infos  {
-            position: relative;
-            transform: translateY(0px);
-        }
     }
 }
