@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function Hero(props) {
 
-  const [mainGame, setMainGame] = React.useState(props.featDetails[1])
+  const [mainGame, setMainGame] = React.useState(props.featDetails[0])
 
   function changeMainGame(g) {
     const filter = props.featDetails.filter(f => f.id === g )
