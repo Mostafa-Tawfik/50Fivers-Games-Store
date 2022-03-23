@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Main(props) {
 
-  const MainGames = props.games.results.map(g => {
+  const MainGames = props.games.results.slice(1).map(g => {
     const gameCover = g.background_image
     return (
       
@@ -25,11 +25,31 @@ export default function Main(props) {
     )
   })
 
+  console.log(props.games.results[0])
+  const game = props.games.results[0]
+  const gameCover = game.background_image
+
+  const featGame = 
+  <div className={styles['featGame']}>
+    <Link href={'/' + game.id}>
+        <img src={gameCover} alt={game.name.substring(0,22)}></img>
+    </Link>
+    <div className={styles["infos"]}>
+        {/* limit characters to 22 */}
+        <Link href={'/' + game.id}>
+            <h2 className={styles['gameName']}>{game.name}</h2>
+        </Link>
+        {/* <p className={styles["tag"]}>{game.genres[0].name}</p> */}
+    </div>
+  </div>
+    
+
   return <div>
 
       <img className="bg" src='../../images/rawpixel-id-3114099.png' alt="keyboard background"></img>
 
       <h1>{props.pageName}</h1>
+      {featGame}
       <article className={styles['main-layout']}>
         {MainGames}
       </article>

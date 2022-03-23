@@ -1,5 +1,48 @@
 @import '../variables.scss';
 
+.featGame {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: 1em 0;
+    background-color: black;
+    border-radius: 10%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    &:hover >.infos{
+        transform: translateY(0px);
+        overflow: visible;
+    }
+    
+    img {
+        position: relative;
+        width: min(70vw, 750px);
+        transition: 0.7s ease;
+        object-fit:contain;
+        cursor: pointer;
+        &:hover {
+            filter: brightness(1.2) saturate(1.5);
+            transform: scale(1.005);
+        }
+    }
+
+    .infos  {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(60px);
+        transition: 0.7s ease;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 1em;
+        .gameName {
+            cursor: pointer;
+            font-family: $sf;
+            text-align: center;
+        }
+    }
+}
 
 .main-layout {
     display: flex;
@@ -25,7 +68,6 @@
             cursor: pointer;
 
             &:hover {
-                // opacity: 0.5;
                 filter: brightness(1.2) saturate(1.5);
                 transform: scale(1.02);
             }
@@ -43,7 +85,6 @@
 
 .tag {
     color: gray;
-    // font-size: smaller;
 }
 
 // 
@@ -54,5 +95,11 @@
         flex-wrap: wrap;
         justify-content: center;
         width: min(90vw);
+    }
+    .featGame {
+        .infos  {
+            position: relative;
+            transform: translateY(0px);
+        }
     }
 }
