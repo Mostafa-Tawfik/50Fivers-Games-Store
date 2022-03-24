@@ -5,10 +5,10 @@ import React from 'react'
 
 export default function action({games, onSaleDetails}) {
 
-  console.log(onSaleDetails)
+  console.log(games)
   
   function fetchCover(id) {
-    return onSaleDetails.filter(g => g[id]).map(g => g[id].data ? g[id].data.header_image : 'https://api.iconify.design/bxs/error.svg?color=white')
+    return onSaleDetails.filter(g => g[id]).map(g => g[id].data ? g[id].data.header_image : 'https://api.iconify.design/bxs/error.svg?color=white&width=110&height=50')
   }
   
   const MainGames = games.map(g => {
