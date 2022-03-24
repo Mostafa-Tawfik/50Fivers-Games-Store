@@ -2,6 +2,8 @@ import React from 'react';
 import styles from '../styles/components/_header.module.scss'
 import Link from 'next/link'
 import MobileNav from './MobileNav';
+import Image from 'next/image'
+import logo from '../public/images/logo.png'
 
 export default function Header() {
 
@@ -47,8 +49,10 @@ export default function Header() {
       
       <div className={styles['header-mobile']}>
         <header className={styles['header']}>
-            <img src='../images/logo.png' className={styles["App-logo"]} alt="logo" />
-            <h1><Link href="/">My Games</Link></h1>
+          <div className={styles["App-logo"]}>
+            <Image src={logo} layout="fill" height={71} width={71} alt="logo"/>
+          </div>
+          <h1><Link href="/">My Games</Link></h1>
         </header>
 
         <MobileNav />

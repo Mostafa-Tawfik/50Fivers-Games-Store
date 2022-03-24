@@ -16,8 +16,10 @@
         font-size: 2rem;
     }
 
-    img {
+    .App-logo {
+        position: relative;
         height: 71px;
+        width: 71px;
         pointer-events: none;
         }
     }
@@ -85,9 +87,12 @@
         .header h1{
             font-size: 1.5rem;
         }
-        .header img {
+        .header{
+           .App-logo {
             height: 50px;
-        }
+            width: 50px;
+            } 
+        } 
     }
 }
 
