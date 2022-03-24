@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import styles from '../styles/Onsale.module.scss'
+import styles from '../../styles/Onsale.module.scss'
 import Link from 'next/link'
 import React from 'react'
 
 export default function action({games, onSaleDetails}) {
 
-  // console.log(games)
+  console.log(games)
 
   const [covers, setCovers] = React.useState([])
 
@@ -13,35 +13,20 @@ export default function action({games, onSaleDetails}) {
     setCovers(onSaleDetails.map(g => g.results).reduce((prev, current) => [...prev, ...current]).map((e, i) => ({ name: e.name, image: e.image.original })))
   },[])
 
-  
-  // function cover(s, i) {
-    
-  //   React.useEffect(()=> {
-  //     const fk = [onSaleDetails.map(g => g)[i]]
-  //     setCovers(fk.reduce((prev, current) => [...prev, ...current]))
-  //     const filter = covers[s]
-  //     console.log(filter)
-  //     return filter
-  //   },[])
-
-  // }
-
   function cover(i) {
       const filter = covers.map(c=> c.image)[i]
       return filter
     }
   
-  // console.log(covers)
-
   const MainGames = games.map((g, index) => {
     
   return (
     
       <div key={g.gameID} className={styles["games"]}>
           
-          {/* <Link href={'/' + g.internalName}> */}
+          <Link href={'/onsale/steam/' + g.steamAppID}>
               <img src={cover(index)} alt={g.title.substring(0,22)} className={styles['onsale-covers']}></img>
-          {/* </Link> */}
+          </Link>
           <div className={styles["infos"]}>
               {/* limit characters to 22 */}
               <Link href={'/' + g.id}>
@@ -86,10 +71,6 @@ export async function getStaticProps() {
   const res = await fetch(`${apiRoot}?storeID=1&upperPrice=30&sortBy=Metacritic&pageSize=15&AAA=true`)
 
   const gameData = await res.json()
-
-  // fetch featured games details
-  // const onSaleDetails = await Promise.all(gameData.map((g) => fetch(`https://store.steampowered.com/api/appdetails?appids=${g.steamAppID}`).then(data => data.json()))
-  // )
 
   // fetch from gamespot
   const onSaleDetails = await Promise.all(gameData.map((g) => fetch(`https://www.gamespot.com/api/games/?${process.env.gamespotKey}&format=json&filter=name:${g.title.substring(0,13)}&limit=1`).then(data => data.json())))
