@@ -23,7 +23,7 @@ function steam({game}) {
       </video>}
 
       {/* use Markdown laibary to compile md to html */}
-      {game.about_the_game && <div className={styles['game-desc']}>{<Markdown>{game.about_the_game}</Markdown>}</div>}
+      {game.about_the_game && <div className={styles['game-desc']}>{<Markdown>{game.short_description}</Markdown>}</div>}
 
       <div className={styles['game-cln']}>
 
