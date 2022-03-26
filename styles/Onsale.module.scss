@@ -48,9 +48,35 @@
 
         .infos  {
             margin: 1em 0;
-            width: min(20vw, 120px);
+            width: min(30vw, 300px);
             .gameName {
                 cursor: pointer;
+                width: min(30vw, 300px);
+            }
+            .infos-details {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 0.5em;
+                .infos-left {
+                    .oldPrice {
+                        color: gray;
+                        text-decoration: line-through;                
+                    }
+                }
+                .infos-right {
+                    width: min(15vw, 150px);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    .savings {
+                        color: green;
+                        span {
+                            color: red;
+                        }
+                    }
+                }
             }
         }
     }

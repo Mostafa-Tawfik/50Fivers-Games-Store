@@ -8,11 +8,13 @@ export default function action({games, onSaleDetails}) {
   console.log(games)
   
   function fetchCover(id) {
+    if (id != null) {
     return onSaleDetails.filter(g => g[id]).map(g => g[id].data ? g[id].data.header_image : 'https://api.iconify.design/bxs/error.svg?color=white&width=110&height=50')
   }
+}
   
-  const MainGames = games.map(g => {
-    
+  const MainGames = games.filter(f => f.steamAppID != null).map(g => {
+    if (g != null) {
   return (
     
       <div key={g.gameID} className={styles["games"]}>
@@ -22,16 +24,29 @@ export default function action({games, onSaleDetails}) {
           </Link>
 
           <div className={styles["infos"]}>
-              {/* limit characters to 22 */}
-              <Link href={'/onsale/steam/' + g.steamAppID}>
-                  <p className={styles['gameName']}>{g.title}</p>
-              </Link>
-              {/* <p className={styles["tag"]}>{g.steamAppID}</p> */}
-              <p className={styles["price"]}>${g.salePrice}</p>
+
+            <Link href={'/onsale/steam/' + g.steamAppID}>
+                <p className={styles['gameName']}>{g.title}</p>
+            </Link>
+
+            <div className={styles['infos-details']}>
+
+              <div className={styles['infos-left']}>
+                {/* <p className={styles["tag"]}>{g.steamAppID}</p> */}
+                <p className={styles["oldPrice"]}>${g.normalPrice}</p>
+                <p className={styles["price"]}>${g.salePrice}</p>
+              </div>
+
+              <div className={styles['infos-right']}>
+                <p className={styles["reviews"]}>{g.steamRatingText}</p>
+                <p className={styles["savings"]}><span>&#10225; </span>%{((g.savings)*1).toFixed(0)}</p>
+              </div>
+
+            </div>
           </div>
       </div>
     
-  )
+  )}
   })
 
   return (
@@ -63,7 +78,7 @@ export async function getStaticProps() {
 
   const apiRoot= 'https://www.cheapshark.com/api/1.0/deals'
 
-  const res = await fetch(`${apiRoot}?storeID=1&upperPrice=30&sortBy=Metacritic&pageSize=15&AAA=true`)
+  const res = await fetch(`${apiRoot}?storeID=1&upperPrice=60&sortBy=Metacritic&pageNumber=1&pageSize=15&onSale=1&desc=0`)
 
   const gameData = await res.json()
 
