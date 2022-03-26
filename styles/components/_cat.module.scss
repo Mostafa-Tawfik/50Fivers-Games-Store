@@ -90,8 +90,14 @@
         width: min(90vw);
     }
     .games-container {
+        flex-wrap: wrap;
+        gap: 0.5em;
         .games {
-        
+            img {
+                width: min(27vw, 200px);
+                height: min(37vw, 300px);
+                border-radius: 20px;
+            }        
             .infos  {
                 margin: 1em 0;
                 width: min(15vw, 150px);

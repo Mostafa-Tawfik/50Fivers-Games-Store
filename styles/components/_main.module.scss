@@ -98,11 +98,49 @@
 }
 
 @media (max-width: 440px) {
+    .featGame {
+        border-radius: 10%;
+        &:hover >.infos{
+            transform: translateY(0px);
+            overflow: visible;
+        }
+        img {
+            position: relative;
+            width: min(80vw, 300px);
+            height: min(60vw, 600px);
+            border-radius: 10%;
+            object-fit: cover;
+        }
+        .infos  {
+            .gameName {
+                width: min(80vw, 300px);
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
     .main-layout {
-        display: flex;
-        gap: 1em;
+        gap: 0.5em;
         flex-wrap: wrap;
         justify-content: center;
         width: min(90vw);
+        .games {
+            padding: 0.1em;
+            img {
+                width: min(80vw, 300px);
+                height: min(60vw, 600px);
+            }
+            .infos  {
+                p {
+                    font-size: 1rem;
+                }
+                margin: 1em 0;
+                width: 100%;
+                .gameName {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
