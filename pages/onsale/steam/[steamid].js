@@ -17,7 +17,7 @@ function steam({game}) {
 
       {game.header_image && <img src={game.header_image} alt={game.name} className={styles['game-img-igdb']}></img>}
 
-      {game.movies && <video width="420" height="315" frameBorder="0" controls
+      {game.movies && <video width="420" height="315" frameBorder="0" controls playsInline
         src={game.movies[0].webm[480]}
         type="video/webm">
       </video>}
