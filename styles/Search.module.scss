@@ -46,7 +46,7 @@
           object-fit:cover;
           cursor: pointer;
   
-          &:hover {
+          &:hover, &:active {
               filter: saturate(1.5);
               transform: scale(1.02);
           }

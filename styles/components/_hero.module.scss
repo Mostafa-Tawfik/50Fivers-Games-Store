@@ -87,7 +87,7 @@
           object-fit:cover;
           cursor: pointer;
   
-          &:hover {
+          &:hover, &:active {
               filter: brightness(1.3);
               transform: scale(1.02);
           }

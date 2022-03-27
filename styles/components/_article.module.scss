@@ -33,7 +33,7 @@
     img {
       width: min(40vw, 500px);
     }
-    &:hover >.article_card-summary{
+    &:hover >.article_card-summary, &:active >.article_card-summary{
       transform: translateY(0px);
       overflow: visible;
     }
@@ -65,7 +65,7 @@
       }
     }
     .article_card-summary {
-      transform: translateY(100px);
+      transform: translateY(120px);
       width: min(35vw, 400px);
     }
   }

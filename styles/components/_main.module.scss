@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    &:hover >.infos{
+    &:hover >.infos, &:active >.infos{
         transform: translateY(0px);
         overflow: visible;
     }
@@ -22,7 +22,7 @@
         transition: 0.7s ease;
         object-fit:contain;
         cursor: pointer;
-        &:hover {
+        &:hover, &:active {
             filter: brightness(1.2) saturate(1.5);
             transform: scale(1.005);
         }
@@ -67,7 +67,7 @@
             object-fit:cover;
             cursor: pointer;
 
-            &:hover {
+            &:hover, &:active {
                 filter: brightness(1.2) saturate(1.5);
                 transform: scale(1.02);
             }
