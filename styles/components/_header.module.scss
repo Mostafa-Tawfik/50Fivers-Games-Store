@@ -85,7 +85,8 @@
 @media (max-width: 800px) {
     .header-showcase {
         .header h1{
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            white-space: nowrap;
         }
         .header{
            .App-logo {
@@ -93,6 +94,9 @@
             width: 50px;
             } 
         } 
+    }
+    .nav {
+        gap: 0.5em;
     }
 }
 

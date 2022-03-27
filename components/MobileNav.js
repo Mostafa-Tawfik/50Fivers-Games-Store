@@ -51,6 +51,7 @@ function MobileNav() {
       <div id="myLinks" style={isOpen ? { display: 'block' } : { display: 'none' }}>
         <Link href="/"><h3 onClick={openMenu}>HOME</h3></Link>
         <Link href="/news"><h3 onClick={openMenu}>News</h3></Link>
+        <Link href="/reviews"><h3 onClick={openMenu}>Reviews</h3></Link>
 
         <h3 onClick={openTrendsMenu}>
           Trends &#x25BC;

@@ -61,6 +61,7 @@ export default function Header() {
       <nav className={styles['nav']}>
           <h2><Link href="/">HOME</Link></h2>
           <h2><Link href="/news">NEWS</Link></h2>
+          <h2><Link href="/reviews">REVIEWS</Link></h2>
 
           <div className={styles["nav-drop"]}>
 
