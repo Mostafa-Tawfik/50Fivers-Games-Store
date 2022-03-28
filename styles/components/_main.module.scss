@@ -46,7 +46,7 @@
 
 .main-layout {
     display: flex;
-    gap: 1em;
+    // gap: 1em;
     flex-wrap: wrap;
     justify-content: center;
     width: min(80vw);
@@ -54,15 +54,15 @@
     .games {
         display: flex;
         flex-direction: column;
-        padding: 1em;
+        padding: 0.5em;
         background-color: black;
         border-radius: 10%;
         position: relative;
         img {
             position: relative;
-            width: min(30vw, 250px);
-            height: min(40vw, 300px);
-            border-radius: 15%;
+            width: min(30vw, 300px);
+            height: min(20vw, 150px);
+            // border-radius: 15%;
             transition: 0.7s ease;
             object-fit:cover;
             cursor: pointer;
