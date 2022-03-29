@@ -10,15 +10,35 @@ function Hero(props) {
     const filter = props.featDetails.filter(f => f.id === g )
     setMainGame(filter[0])
   }
+  
+  // a state to hold the active game from the feature games
+  const [activeFeature, setActiveFeature] = React.useState(props.games.results[0].id)
 
   const homeHero = props.games.results.map(g => {
     const gameCover = g.background_image
+
+    // onclick change the active feature game
+    function changeActiveFeature() {
+      setActiveFeature(g.id)
+    }
+
+    // on click activate the feature game
+    function checkActiveFeature() {
+      if(g.id === activeFeature) {
+        return 'active'
+      }
+    }
+
     return (
       
         <div  key={g.id} className={styles["games"]}>
 
-          <div onClick={()=> changeMainGame(g.id)}>
-              <img src={gameCover} alt={g.name.substring(0,22)}></img>
+          <div onClick={()=> {
+            changeMainGame(g.id)
+            changeActiveFeature()
+          }}
+            >
+              <img src={gameCover} alt={g.name.substring(0,22)} className={styles[checkActiveFeature()]}></img>
           </div>
           <div className={styles["infos"]}>
               {/* limit characters to 22 */}

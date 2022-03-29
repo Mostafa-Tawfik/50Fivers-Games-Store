@@ -78,6 +78,11 @@
       padding: 0.5em;
       border-radius: 10px;
       position: relative;
+      .active {
+        opacity: 1;
+        filter: brightness(1.3);
+        transform: scale(1.02);
+      }
       img {
           position: relative;
           width: min(15vw, 125px);
@@ -86,11 +91,13 @@
           transition: 0.7s ease;
           object-fit:cover;
           cursor: pointer;
+          // opacity: 0.6;
+          filter: brightness(0.25);
   
-          &:hover, &:active {
-              filter: brightness(1.3);
-              transform: scale(1.02);
-          }
+          // &:hover, &:active {
+          //     filter: brightness(1.3);
+          //     transform: scale(1.02);
+          // }
       }
   
       .infos  {
