@@ -50,7 +50,7 @@ export default function Header() {
       <div className={styles['header-mobile']}>
         <header className={styles['header']}>
           <div className={styles["App-logo"]}>
-            <Image src={logo} layout="fill" height={71} width={71} alt="logo"/>
+            <Image src={logo} layout="fill" alt="logo"/>
           </div>
           <h1><Link href="/">My Games</Link></h1>
         </header>

@@ -25,7 +25,6 @@ export default function Main(props) {
     )
   })
 
-  console.log(props.games.results[0])
   const game = props.games.results[0]
   const gameCover = game.background_image
 

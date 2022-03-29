@@ -62,13 +62,21 @@ export async function getServerSideProps() {
   const featDetails = await Promise.all(gameData.results.map((g) => fetch(`${apiRoot}/${g.id}?${process.env.rawgkey}`).then(data => data.json()))
   ) 
 
+  // check if month 28 30 or 31 days
+  function checkDay() {
+    if (day = 29 || 30 || 31) {
+      let newDay = ("0" + (date.getDate() -3)).slice(-2)
+      return newDay
+    }
+  }
+
   // fetch top release
-  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${lastMonth}-${day},${year}-${month}-${day}&ordering=-metacritic&page=1&page_size=5`)
+  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${lastMonth}-${checkDay()},${year}-${month}-${day}&ordering=-metacritic&page=1&page_size=5`)
 
   const topRel = await topRelRes.json()
 
   // fetch upcoming
-  const upcomingGames = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${month}-${day},${nextYear}-${nextHalf}-${day}&ordering=-rating&page=1&page_size=5`)
+  const upcomingGames = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${month}-${day},${nextYear}-${nextHalf}-${checkDay()}&ordering=-rating&page=1&page_size=5`)
 
   const upcoming = await upcomingGames.json()
 

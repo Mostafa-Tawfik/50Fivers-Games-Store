@@ -38,8 +38,16 @@ export async function getStaticProps() {
   date.setDate(date.getDate() - 30);
   var lastMonth = ("0" + (date.getMonth() + 1)).slice(-2)
 
+  // check if month 28 30 or 31 days
+  function checkDay() {
+    if (day = 29 || 30 || 31) {
+      let newDay = ("0" + (date.getDate() -3)).slice(-2)
+      return newDay
+    }
+  }
+
   // fetch top release
-  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${lastMonth}-${day},${year}-${month}-${day}&ordering=-metacritic&page=1&page_size=20`)
+  const topRelRes = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${lastMonth}-${checkDay()},${year}-${month}-${day}&ordering=-metacritic&page=1&page_size=20`)
 
   const topRel = await topRelRes.json()
 

@@ -45,8 +45,16 @@ export async function getStaticProps() {
   var nextHalf = ("0" + (date.getMonth() + 1)).slice(-2)
   var nextYear = date.getFullYear()
 
+  // check if month 28 30 or 31 days
+  function checkDay() {
+    if (day = 29 || 30 || 31) {
+      let newDay = ("0" + (date.getDate() -3)).slice(-2)
+      return newDay
+    }
+  }
+
   // fetch upcoming
-  const upcomingGames = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${month}-${day},${nextYear}-${nextHalf}-${day}&ordering=-rating&page=1&page_size=15`)
+  const upcomingGames = await fetch(`${apiRoot}?${process.env.rawgkey}&dates=${year}-${month}-${day},${nextYear}-${nextHalf}-${checkDay()}&ordering=-rating&page=1&page_size=15`)
 
   const upcoming = await upcomingGames.json()
 
