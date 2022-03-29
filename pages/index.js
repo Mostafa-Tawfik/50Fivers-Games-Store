@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import CatShowcase from '../components/CatShowcase'
 import Hero from '../components/Hero'
+import Link from 'next/link'
 
 export default function Home({games, topRel, upcoming, featDetails}) {
 
@@ -19,12 +20,14 @@ export default function Home({games, topRel, upcoming, featDetails}) {
       </section>
 
       <article className={styles['cat-container']}>
-        <h2>TOP NEW RELEASES</h2>
+        
+          <h2><Link href="/newreleases">TOP NEW RELEASES</Link></h2>
+        
         <CatShowcase topRel={topRel}/>
       </article>
 
       <article className={styles['cat-container']}>
-        <h2>UPCOMING RELEASES</h2>
+        <h2><Link href="/upcoming">UPCOMING RELEASES</Link></h2>
         <CatShowcase topRel={upcoming}/>
       </article>
 
